@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E623C251EF455FB8B083428 /* Pods_iPTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB7DFAD2EDDF78944B48965 /* Pods_iPTV.framework */; };
+		9E2717DD2CD507A200CB1FA2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717A92CD507A200CB1FA2 /* Category.swift */; };
+		9E2717DE2CD507A200CB1FA2 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717AA2CD507A200CB1FA2 /* Channel.swift */; };
+		9E2717DF2CD507A200CB1FA2 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717AB2CD507A200CB1FA2 /* Country.swift */; };
+		9E2717E02CD507A200CB1FA2 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717AC2CD507A200CB1FA2 /* FilterType.swift */; };
+		9E2717E12CD507A200CB1FA2 /* Guide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717AD2CD507A200CB1FA2 /* Guide.swift */; };
+		9E2717E22CD507A200CB1FA2 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717AE2CD507A200CB1FA2 /* Language.swift */; };
+		9E2717E32CD507A200CB1FA2 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717AF2CD507A200CB1FA2 /* Region.swift */; };
+		9E2717E42CD507A200CB1FA2 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717B02CD507A200CB1FA2 /* Stream.swift */; };
+		9E2717E52CD507A200CB1FA2 /* Subdivision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717B12CD507A200CB1FA2 /* Subdivision.swift */; };
+		9E2717E62CD507A200CB1FA2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717B32CD507A200CB1FA2 /* APIError.swift */; };
+		9E2717E72CD507A200CB1FA2 /* CSVLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717B42CD507A200CB1FA2 /* CSVLoader.swift */; };
+		9E2717E82CD507A200CB1FA2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717B52CD507A200CB1FA2 /* Environment.swift */; };
+		9E2717E92CD507A200CB1FA2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717B62CD507A200CB1FA2 /* NetworkManager.swift */; };
+		9E2717EA2CD507A200CB1FA2 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717C12CD507A200CB1FA2 /* CacheManager.swift */; };
+		9E2717EB2CD507A200CB1FA2 /* ChannelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717C22CD507A200CB1FA2 /* ChannelViewModel.swift */; };
+		9E2717EC2CD507A200CB1FA2 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717C32CD507A200CB1FA2 /* DashboardViewModel.swift */; };
+		9E2717ED2CD507A200CB1FA2 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717C42CD507A200CB1FA2 /* FavoritesManager.swift */; };
+		9E2717EE2CD507A200CB1FA2 /* M3UParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717C52CD507A200CB1FA2 /* M3UParser.swift */; };
+		9E2717EF2CD507A200CB1FA2 /* CategoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717C72CD507A200CB1FA2 /* CategoryCardView.swift */; };
+		9E2717F02CD507A200CB1FA2 /* ChannelListView_old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717C82CD507A200CB1FA2 /* ChannelListView_old.swift */; };
+		9E2717F12CD507A200CB1FA2 /* DashboardView_old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717C92CD507A200CB1FA2 /* DashboardView_old.swift */; };
+		9E2717F22CD507A200CB1FA2 /* FilterOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717CA2CD507A200CB1FA2 /* FilterOptionsView.swift */; };
+		9E2717F32CD507A200CB1FA2 /* GroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717CB2CD507A200CB1FA2 /* GroupButton.swift */; };
+		9E2717F42CD507A200CB1FA2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717CC2CD507A200CB1FA2 /* LoadingView.swift */; };
+		9E2717F52CD507A200CB1FA2 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717CD2CD507A200CB1FA2 /* PlayerView.swift */; };
+		9E2717F62CD507A200CB1FA2 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717CF2CD507A200CB1FA2 /* AppView.swift */; };
+		9E2717F72CD507A200CB1FA2 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717D02CD507A200CB1FA2 /* CategoryListView.swift */; };
+		9E2717F82CD507A200CB1FA2 /* ChannelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717D12CD507A200CB1FA2 /* ChannelListView.swift */; };
+		9E2717F92CD507A200CB1FA2 /* CountryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717D22CD507A200CB1FA2 /* CountryListView.swift */; };
+		9E2717FA2CD507A200CB1FA2 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717D32CD507A200CB1FA2 /* DashboardView.swift */; };
+		9E2717FB2CD507A200CB1FA2 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717D42CD507A200CB1FA2 /* FavoritesView.swift */; };
+		9E2717FC2CD507A200CB1FA2 /* LanguageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717D52CD507A200CB1FA2 /* LanguageListView.swift */; };
+		9E2717FD2CD507A200CB1FA2 /* RegionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717D62CD507A200CB1FA2 /* RegionListView.swift */; };
+		9E2717FE2CD507A200CB1FA2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717D92CD507A200CB1FA2 /* ContentView.swift */; };
+		9E2717FF2CD507A200CB1FA2 /* iPTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2717DB2CD507A200CB1FA2 /* iPTVApp.swift */; };
+		9E2718002CD507A200CB1FA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E2717B82CD507A200CB1FA2 /* Preview Assets.xcassets */; };
+		9E2718012CD507A200CB1FA2 /* categories.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9E2717BA2CD507A200CB1FA2 /* categories.csv */; };
+		9E2718022CD507A200CB1FA2 /* channels.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9E2717BB2CD507A200CB1FA2 /* channels.csv */; };
+		9E2718032CD507A200CB1FA2 /* countries.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9E2717BC2CD507A200CB1FA2 /* countries.csv */; };
+		9E2718042CD507A200CB1FA2 /* languages.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9E2717BD2CD507A200CB1FA2 /* languages.csv */; };
+		9E2718052CD507A200CB1FA2 /* regions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9E2717BE2CD507A200CB1FA2 /* regions.csv */; };
+		9E2718062CD507A200CB1FA2 /* subdivisions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9E2717BF2CD507A200CB1FA2 /* subdivisions.csv */; };
+		9E2718072CD507A200CB1FA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E2717D82CD507A200CB1FA2 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2EB7DFAD2EDDF78944B48965 /* Pods_iPTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		872312650560F9DD2BEEBF8D /* Pods-iPTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPTV.debug.xcconfig"; path = "Target Support Files/Pods-iPTV/Pods-iPTV.debug.xcconfig"; sourceTree = "<group>"; };
+		9E00F21C2CCA9CF600BFC491 /* iPTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E2717A92CD507A200CB1FA2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		9E2717AA2CD507A200CB1FA2 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		9E2717AB2CD507A200CB1FA2 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		9E2717AC2CD507A200CB1FA2 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
+		9E2717AD2CD507A200CB1FA2 /* Guide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guide.swift; sourceTree = "<group>"; };
+		9E2717AE2CD507A200CB1FA2 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		9E2717AF2CD507A200CB1FA2 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		9E2717B02CD507A200CB1FA2 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		9E2717B12CD507A200CB1FA2 /* Subdivision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subdivision.swift; sourceTree = "<group>"; };
+		9E2717B32CD507A200CB1FA2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		9E2717B42CD507A200CB1FA2 /* CSVLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVLoader.swift; sourceTree = "<group>"; };
+		9E2717B52CD507A200CB1FA2 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		9E2717B62CD507A200CB1FA2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9E2717B82CD507A200CB1FA2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9E2717BA2CD507A200CB1FA2 /* categories.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = categories.csv; sourceTree = "<group>"; };
+		9E2717BB2CD507A200CB1FA2 /* channels.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = channels.csv; sourceTree = "<group>"; };
+		9E2717BC2CD507A200CB1FA2 /* countries.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = countries.csv; sourceTree = "<group>"; };
+		9E2717BD2CD507A200CB1FA2 /* languages.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = languages.csv; sourceTree = "<group>"; };
+		9E2717BE2CD507A200CB1FA2 /* regions.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = regions.csv; sourceTree = "<group>"; };
+		9E2717BF2CD507A200CB1FA2 /* subdivisions.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = subdivisions.csv; sourceTree = "<group>"; };
+		9E2717C12CD507A200CB1FA2 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		9E2717C22CD507A200CB1FA2 /* ChannelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewModel.swift; sourceTree = "<group>"; };
+		9E2717C32CD507A200CB1FA2 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		9E2717C42CD507A200CB1FA2 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		9E2717C52CD507A200CB1FA2 /* M3UParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M3UParser.swift; sourceTree = "<group>"; };
+		9E2717C72CD507A200CB1FA2 /* CategoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCardView.swift; sourceTree = "<group>"; };
+		9E2717C82CD507A200CB1FA2 /* ChannelListView_old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListView_old.swift; sourceTree = "<group>"; };
+		9E2717C92CD507A200CB1FA2 /* DashboardView_old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView_old.swift; sourceTree = "<group>"; };
+		9E2717CA2CD507A200CB1FA2 /* FilterOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptionsView.swift; sourceTree = "<group>"; };
+		9E2717CB2CD507A200CB1FA2 /* GroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupButton.swift; sourceTree = "<group>"; };
+		9E2717CC2CD507A200CB1FA2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		9E2717CD2CD507A200CB1FA2 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		9E2717CF2CD507A200CB1FA2 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		9E2717D02CD507A200CB1FA2 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		9E2717D12CD507A200CB1FA2 /* ChannelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListView.swift; sourceTree = "<group>"; };
+		9E2717D22CD507A200CB1FA2 /* CountryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListView.swift; sourceTree = "<group>"; };
+		9E2717D32CD507A200CB1FA2 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		9E2717D42CD507A200CB1FA2 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		9E2717D52CD507A200CB1FA2 /* LanguageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListView.swift; sourceTree = "<group>"; };
+		9E2717D62CD507A200CB1FA2 /* RegionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionListView.swift; sourceTree = "<group>"; };
+		9E2717D82CD507A200CB1FA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E2717D92CD507A200CB1FA2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9E2717DA2CD507A200CB1FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E2717DB2CD507A200CB1FA2 /* iPTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPTVApp.swift; sourceTree = "<group>"; };
+		9E2718092CD568F600CB1FA2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A6C4B4FFBC2151D9D6D48032 /* Pods-iPTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPTV.release.xcconfig"; path = "Target Support Files/Pods-iPTV/Pods-iPTV.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9E00F2192CCA9CF500BFC491 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E623C251EF455FB8B083428 /* Pods_iPTV.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		69EAEE0B3DA63E6EDD66B9FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				872312650560F9DD2BEEBF8D /* Pods-iPTV.debug.xcconfig */,
+				A6C4B4FFBC2151D9D6D48032 /* Pods-iPTV.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9E00F2132CCA9CF500BFC491 = {
+			isa = PBXGroup;
+			children = (
+				9E2718092CD568F600CB1FA2 /* .gitignore */,
+				9E2717DC2CD507A200CB1FA2 /* iPTV */,
+				9E00F21D2CCA9CF600BFC491 /* Products */,
+				69EAEE0B3DA63E6EDD66B9FC /* Pods */,
+				AE6CD72F28A86511B1778857 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9E00F21D2CCA9CF600BFC491 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E00F21C2CCA9CF600BFC491 /* iPTV.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9E2717B22CD507A200CB1FA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E2717A92CD507A200CB1FA2 /* Category.swift */,
+				9E2717AA2CD507A200CB1FA2 /* Channel.swift */,
+				9E2717AB2CD507A200CB1FA2 /* Country.swift */,
+				9E2717AC2CD507A200CB1FA2 /* FilterType.swift */,
+				9E2717AD2CD507A200CB1FA2 /* Guide.swift */,
+				9E2717AE2CD507A200CB1FA2 /* Language.swift */,
+				9E2717AF2CD507A200CB1FA2 /* Region.swift */,
+				9E2717B02CD507A200CB1FA2 /* Stream.swift */,
+				9E2717B12CD507A200CB1FA2 /* Subdivision.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9E2717B72CD507A200CB1FA2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9E2717B32CD507A200CB1FA2 /* APIError.swift */,
+				9E2717B42CD507A200CB1FA2 /* CSVLoader.swift */,
+				9E2717B52CD507A200CB1FA2 /* Environment.swift */,
+				9E2717B62CD507A200CB1FA2 /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9E2717B92CD507A200CB1FA2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9E2717B82CD507A200CB1FA2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9E2717C02CD507A200CB1FA2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9E2717BA2CD507A200CB1FA2 /* categories.csv */,
+				9E2717BB2CD507A200CB1FA2 /* channels.csv */,
+				9E2717BC2CD507A200CB1FA2 /* countries.csv */,
+				9E2717BD2CD507A200CB1FA2 /* languages.csv */,
+				9E2717BE2CD507A200CB1FA2 /* regions.csv */,
+				9E2717BF2CD507A200CB1FA2 /* subdivisions.csv */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9E2717C62CD507A200CB1FA2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9E2717C12CD507A200CB1FA2 /* CacheManager.swift */,
+				9E2717C22CD507A200CB1FA2 /* ChannelViewModel.swift */,
+				9E2717C32CD507A200CB1FA2 /* DashboardViewModel.swift */,
+				9E2717C42CD507A200CB1FA2 /* FavoritesManager.swift */,
+				9E2717C52CD507A200CB1FA2 /* M3UParser.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9E2717CE2CD507A200CB1FA2 /* Old Files */ = {
+			isa = PBXGroup;
+			children = (
+				9E2717C72CD507A200CB1FA2 /* CategoryCardView.swift */,
+				9E2717C82CD507A200CB1FA2 /* ChannelListView_old.swift */,
+				9E2717C92CD507A200CB1FA2 /* DashboardView_old.swift */,
+				9E2717CA2CD507A200CB1FA2 /* FilterOptionsView.swift */,
+				9E2717CB2CD507A200CB1FA2 /* GroupButton.swift */,
+				9E2717CC2CD507A200CB1FA2 /* LoadingView.swift */,
+				9E2717CD2CD507A200CB1FA2 /* PlayerView.swift */,
+			);
+			path = "Old Files";
+			sourceTree = "<group>";
+		};
+		9E2717D72CD507A200CB1FA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E2717CE2CD507A200CB1FA2 /* Old Files */,
+				9E2717CF2CD507A200CB1FA2 /* AppView.swift */,
+				9E2717D02CD507A200CB1FA2 /* CategoryListView.swift */,
+				9E2717D12CD507A200CB1FA2 /* ChannelListView.swift */,
+				9E2717D22CD507A200CB1FA2 /* CountryListView.swift */,
+				9E2717D32CD507A200CB1FA2 /* DashboardView.swift */,
+				9E2717D42CD507A200CB1FA2 /* FavoritesView.swift */,
+				9E2717D52CD507A200CB1FA2 /* LanguageListView.swift */,
+				9E2717D62CD507A200CB1FA2 /* RegionListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9E2717DC2CD507A200CB1FA2 /* iPTV */ = {
+			isa = PBXGroup;
+			children = (
+				9E2717B22CD507A200CB1FA2 /* Model */,
+				9E2717B72CD507A200CB1FA2 /* Networking */,
+				9E2717B92CD507A200CB1FA2 /* Preview Content */,
+				9E2717C02CD507A200CB1FA2 /* Resources */,
+				9E2717C62CD507A200CB1FA2 /* ViewModel */,
+				9E2717D72CD507A200CB1FA2 /* Views */,
+				9E2717D82CD507A200CB1FA2 /* Assets.xcassets */,
+				9E2717D92CD507A200CB1FA2 /* ContentView.swift */,
+				9E2717DA2CD507A200CB1FA2 /* Info.plist */,
+				9E2717DB2CD507A200CB1FA2 /* iPTVApp.swift */,
+			);
+			path = iPTV;
+			sourceTree = "<group>";
+		};
+		AE6CD72F28A86511B1778857 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2EB7DFAD2EDDF78944B48965 /* Pods_iPTV.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9E00F21B2CCA9CF500BFC491 /* iPTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E00F2402CCA9CF700BFC491 /* Build configuration list for PBXNativeTarget "iPTV" */;
+			buildPhases = (
+				DD83602F79F541B62A230CF0 /* [CP] Check Pods Manifest.lock */,
+				9E00F2182CCA9CF500BFC491 /* Sources */,
+				9E00F2192CCA9CF500BFC491 /* Frameworks */,
+				9E00F21A2CCA9CF500BFC491 /* Resources */,
+				92FCC31B4F1C983F65034C9E /* [CP] Embed Pods Frameworks */,
+				D06C9CB47FC92E6EFEED5C13 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPTV;
+			productName = iPTV;
+			productReference = 9E00F21C2CCA9CF600BFC491 /* iPTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9E00F2142CCA9CF500BFC491 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					9E00F21B2CCA9CF500BFC491 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 9E00F2172CCA9CF500BFC491 /* Build configuration list for PBXProject "iPTV" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9E00F2132CCA9CF500BFC491;
+			productRefGroup = 9E00F21D2CCA9CF600BFC491 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9E00F21B2CCA9CF500BFC491 /* iPTV */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9E00F21A2CCA9CF500BFC491 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E2718002CD507A200CB1FA2 /* Preview Assets.xcassets in Resources */,
+				9E2718012CD507A200CB1FA2 /* categories.csv in Resources */,
+				9E2718022CD507A200CB1FA2 /* channels.csv in Resources */,
+				9E2718032CD507A200CB1FA2 /* countries.csv in Resources */,
+				9E2718042CD507A200CB1FA2 /* languages.csv in Resources */,
+				9E2718052CD507A200CB1FA2 /* regions.csv in Resources */,
+				9E2718062CD507A200CB1FA2 /* subdivisions.csv in Resources */,
+				9E2718072CD507A200CB1FA2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		92FCC31B4F1C983F65034C9E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iPTV/Pods-iPTV-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iPTV/Pods-iPTV-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iPTV/Pods-iPTV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D06C9CB47FC92E6EFEED5C13 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iPTV/Pods-iPTV-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iPTV/Pods-iPTV-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iPTV/Pods-iPTV-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD83602F79F541B62A230CF0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iPTV-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9E00F2182CCA9CF500BFC491 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E2717DD2CD507A200CB1FA2 /* Category.swift in Sources */,
+				9E2717DE2CD507A200CB1FA2 /* Channel.swift in Sources */,
+				9E2717DF2CD507A200CB1FA2 /* Country.swift in Sources */,
+				9E2717E02CD507A200CB1FA2 /* FilterType.swift in Sources */,
+				9E2717E12CD507A200CB1FA2 /* Guide.swift in Sources */,
+				9E2717E22CD507A200CB1FA2 /* Language.swift in Sources */,
+				9E2717E32CD507A200CB1FA2 /* Region.swift in Sources */,
+				9E2717E42CD507A200CB1FA2 /* Stream.swift in Sources */,
+				9E2717E52CD507A200CB1FA2 /* Subdivision.swift in Sources */,
+				9E2717E62CD507A200CB1FA2 /* APIError.swift in Sources */,
+				9E2717E72CD507A200CB1FA2 /* CSVLoader.swift in Sources */,
+				9E2717E82CD507A200CB1FA2 /* Environment.swift in Sources */,
+				9E2717E92CD507A200CB1FA2 /* NetworkManager.swift in Sources */,
+				9E2717EA2CD507A200CB1FA2 /* CacheManager.swift in Sources */,
+				9E2717EB2CD507A200CB1FA2 /* ChannelViewModel.swift in Sources */,
+				9E2717EC2CD507A200CB1FA2 /* DashboardViewModel.swift in Sources */,
+				9E2717ED2CD507A200CB1FA2 /* FavoritesManager.swift in Sources */,
+				9E2717EE2CD507A200CB1FA2 /* M3UParser.swift in Sources */,
+				9E2717EF2CD507A200CB1FA2 /* CategoryCardView.swift in Sources */,
+				9E2717F02CD507A200CB1FA2 /* ChannelListView_old.swift in Sources */,
+				9E2717F12CD507A200CB1FA2 /* DashboardView_old.swift in Sources */,
+				9E2717F22CD507A200CB1FA2 /* FilterOptionsView.swift in Sources */,
+				9E2717F32CD507A200CB1FA2 /* GroupButton.swift in Sources */,
+				9E2717F42CD507A200CB1FA2 /* LoadingView.swift in Sources */,
+				9E2717F52CD507A200CB1FA2 /* PlayerView.swift in Sources */,
+				9E2717F62CD507A200CB1FA2 /* AppView.swift in Sources */,
+				9E2717F72CD507A200CB1FA2 /* CategoryListView.swift in Sources */,
+				9E2717F82CD507A200CB1FA2 /* ChannelListView.swift in Sources */,
+				9E2717F92CD507A200CB1FA2 /* CountryListView.swift in Sources */,
+				9E2717FA2CD507A200CB1FA2 /* DashboardView.swift in Sources */,
+				9E2717FB2CD507A200CB1FA2 /* FavoritesView.swift in Sources */,
+				9E2717FC2CD507A200CB1FA2 /* LanguageListView.swift in Sources */,
+				9E2717FD2CD507A200CB1FA2 /* RegionListView.swift in Sources */,
+				9E2717FE2CD507A200CB1FA2 /* ContentView.swift in Sources */,
+				9E2717FF2CD507A200CB1FA2 /* iPTVApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9E00F23E2CCA9CF700BFC491 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9E00F23F2CCA9CF700BFC491 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9E00F2412CCA9CF700BFC491 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 872312650560F9DD2BEEBF8D /* Pods-iPTV.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iPTV/Preview Content\"";
+				DEVELOPMENT_TEAM = C6E94YDVFW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iPTV/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.playingview.mobigaurav.iPTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9E00F2422CCA9CF700BFC491 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6C4B4FFBC2151D9D6D48032 /* Pods-iPTV.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iPTV/Preview Content\"";
+				DEVELOPMENT_TEAM = C6E94YDVFW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iPTV/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.playingview.mobigaurav.iPTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9E00F2172CCA9CF500BFC491 /* Build configuration list for PBXProject "iPTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E00F23E2CCA9CF700BFC491 /* Debug */,
+				9E00F23F2CCA9CF700BFC491 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E00F2402CCA9CF700BFC491 /* Build configuration list for PBXNativeTarget "iPTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E00F2412CCA9CF700BFC491 /* Debug */,
+				9E00F2422CCA9CF700BFC491 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9E00F2142CCA9CF500BFC491 /* Project object */;
+}
