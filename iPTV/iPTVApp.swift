@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct iPTVApp: App {
+    @UIApplicationDelegateAdaptor(CustomAppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
-            AppView()
+            SplashScreenView()
         }
     }
 }

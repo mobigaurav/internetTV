@@ -7,6 +7,9 @@
 
 import SwiftUI
 import Combine
+import GoogleCast
+import AVKit
+import MediaPlayer
 
 struct DashboardView: View {
     @State private var channels: [ChannelInfo] = []
@@ -101,22 +104,20 @@ struct DashboardView: View {
                 
             }
             .navigationTitle("Channels")
-//            .onAppear{
-//                // Load from cache if available
-//                if let cachedChannels = CacheManager.shared.loadChannels(forKey: cacheKey) {
-//                    //self.channels = cachedChannels
-//                    self.filteredChannels = cachedChannels
-//                    self.isLoading = false
-//                } else {
-//                    loadChannels()
-//                }
-//            }
+            .navigationBarItems(trailing: HStack(spacing:16) {
+                CastButton()
+                    .frame(width:35, height: 35)
+                MPVolumeViewWrapper()
+                    .frame(width:35, height: 35)
+            })
+
             .sheet(item: $selectedStreamUrl) {streamUrl in
-                PlayerView(streamURL: streamUrl.url)
+               PlayerView(streamURL: streamUrl.url)
                 
             }
         }
     }
+
     
     private func applyFilters(_ query:String) {
         if query.isEmpty {

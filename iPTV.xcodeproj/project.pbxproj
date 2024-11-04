@@ -51,6 +51,17 @@
 		9E2718052CD507A200CB1FA2 /* regions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9E2717BE2CD507A200CB1FA2 /* regions.csv */; };
 		9E2718062CD507A200CB1FA2 /* subdivisions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9E2717BF2CD507A200CB1FA2 /* subdivisions.csv */; };
 		9E2718072CD507A200CB1FA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E2717D82CD507A200CB1FA2 /* Assets.xcassets */; };
+		9E27180B2CD56CE500CB1FA2 /* CustomAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27180A2CD56CE500CB1FA2 /* CustomAppDelegate.swift */; };
+		9E27180D2CD56E6E00CB1FA2 /* CastButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27180C2CD56E6E00CB1FA2 /* CastButton.swift */; };
+		9E27180F2CD5700300CB1FA2 /* CastPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27180E2CD5700300CB1FA2 /* CastPlayerView.swift */; };
+		9E2718112CD5735000CB1FA2 /* MPVolumeViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2718102CD5735000CB1FA2 /* MPVolumeViewWrapper.swift */; };
+		9E2718132CD5791E00CB1FA2 /* CustomAirPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2718122CD5791E00CB1FA2 /* CustomAirPlayButton.swift */; };
+		9E7C4D912CD92FFF00C28602 /* SearchIPTVLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D902CD92FFF00C28602 /* SearchIPTVLinkView.swift */; };
+		9E7C4D932CD93A1800C28602 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D922CD93A1700C28602 /* MoreView.swift */; };
+		9E7C4D952CD93A5000C28602 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D942CD93A5000C28602 /* AboutAppView.swift */; };
+		9E7C4D972CD93A8000C28602 /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D962CD93A8000C28602 /* PurchaseManager.swift */; };
+		9E7C4D992CD93B4B00C28602 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D982CD93B4B00C28602 /* PurchaseView.swift */; };
+		9E7C4D9B2CD94C7E00C28602 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D9A2CD94C7E00C28602 /* SplashScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +113,17 @@
 		9E2717DA2CD507A200CB1FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E2717DB2CD507A200CB1FA2 /* iPTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPTVApp.swift; sourceTree = "<group>"; };
 		9E2718092CD568F600CB1FA2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9E27180A2CD56CE500CB1FA2 /* CustomAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAppDelegate.swift; sourceTree = "<group>"; };
+		9E27180C2CD56E6E00CB1FA2 /* CastButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastButton.swift; sourceTree = "<group>"; };
+		9E27180E2CD5700300CB1FA2 /* CastPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastPlayerView.swift; sourceTree = "<group>"; };
+		9E2718102CD5735000CB1FA2 /* MPVolumeViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPVolumeViewWrapper.swift; sourceTree = "<group>"; };
+		9E2718122CD5791E00CB1FA2 /* CustomAirPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAirPlayButton.swift; sourceTree = "<group>"; };
+		9E7C4D902CD92FFF00C28602 /* SearchIPTVLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIPTVLinkView.swift; sourceTree = "<group>"; };
+		9E7C4D922CD93A1700C28602 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		9E7C4D942CD93A5000C28602 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
+		9E7C4D962CD93A8000C28602 /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
+		9E7C4D982CD93B4B00C28602 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
+		9E7C4D9A2CD94C7E00C28602 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		A6C4B4FFBC2151D9D6D48032 /* Pods-iPTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPTV.release.xcconfig"; path = "Target Support Files/Pods-iPTV/Pods-iPTV.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +223,7 @@
 				9E2717C32CD507A200CB1FA2 /* DashboardViewModel.swift */,
 				9E2717C42CD507A200CB1FA2 /* FavoritesManager.swift */,
 				9E2717C52CD507A200CB1FA2 /* M3UParser.swift */,
+				9E7C4D962CD93A8000C28602 /* PurchaseManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -214,7 +237,6 @@
 				9E2717CA2CD507A200CB1FA2 /* FilterOptionsView.swift */,
 				9E2717CB2CD507A200CB1FA2 /* GroupButton.swift */,
 				9E2717CC2CD507A200CB1FA2 /* LoadingView.swift */,
-				9E2717CD2CD507A200CB1FA2 /* PlayerView.swift */,
 			);
 			path = "Old Files";
 			sourceTree = "<group>";
@@ -225,12 +247,22 @@
 				9E2717CE2CD507A200CB1FA2 /* Old Files */,
 				9E2717CF2CD507A200CB1FA2 /* AppView.swift */,
 				9E2717D02CD507A200CB1FA2 /* CategoryListView.swift */,
+				9E2717CD2CD507A200CB1FA2 /* PlayerView.swift */,
 				9E2717D12CD507A200CB1FA2 /* ChannelListView.swift */,
 				9E2717D22CD507A200CB1FA2 /* CountryListView.swift */,
 				9E2717D32CD507A200CB1FA2 /* DashboardView.swift */,
 				9E2717D42CD507A200CB1FA2 /* FavoritesView.swift */,
 				9E2717D52CD507A200CB1FA2 /* LanguageListView.swift */,
 				9E2717D62CD507A200CB1FA2 /* RegionListView.swift */,
+				9E27180C2CD56E6E00CB1FA2 /* CastButton.swift */,
+				9E27180E2CD5700300CB1FA2 /* CastPlayerView.swift */,
+				9E2718102CD5735000CB1FA2 /* MPVolumeViewWrapper.swift */,
+				9E2718122CD5791E00CB1FA2 /* CustomAirPlayButton.swift */,
+				9E7C4D902CD92FFF00C28602 /* SearchIPTVLinkView.swift */,
+				9E7C4D922CD93A1700C28602 /* MoreView.swift */,
+				9E7C4D942CD93A5000C28602 /* AboutAppView.swift */,
+				9E7C4D982CD93B4B00C28602 /* PurchaseView.swift */,
+				9E7C4D9A2CD94C7E00C28602 /* SplashScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,6 +280,7 @@
 				9E2717D92CD507A200CB1FA2 /* ContentView.swift */,
 				9E2717DA2CD507A200CB1FA2 /* Info.plist */,
 				9E2717DB2CD507A200CB1FA2 /* iPTVApp.swift */,
+				9E27180A2CD56CE500CB1FA2 /* CustomAppDelegate.swift */,
 			);
 			path = iPTV;
 			sourceTree = "<group>";
@@ -401,12 +434,18 @@
 				9E2717DD2CD507A200CB1FA2 /* Category.swift in Sources */,
 				9E2717DE2CD507A200CB1FA2 /* Channel.swift in Sources */,
 				9E2717DF2CD507A200CB1FA2 /* Country.swift in Sources */,
+				9E7C4D992CD93B4B00C28602 /* PurchaseView.swift in Sources */,
 				9E2717E02CD507A200CB1FA2 /* FilterType.swift in Sources */,
 				9E2717E12CD507A200CB1FA2 /* Guide.swift in Sources */,
 				9E2717E22CD507A200CB1FA2 /* Language.swift in Sources */,
+				9E7C4D9B2CD94C7E00C28602 /* SplashScreenView.swift in Sources */,
+				9E7C4D972CD93A8000C28602 /* PurchaseManager.swift in Sources */,
 				9E2717E32CD507A200CB1FA2 /* Region.swift in Sources */,
+				9E7C4D932CD93A1800C28602 /* MoreView.swift in Sources */,
+				9E27180D2CD56E6E00CB1FA2 /* CastButton.swift in Sources */,
 				9E2717E42CD507A200CB1FA2 /* Stream.swift in Sources */,
 				9E2717E52CD507A200CB1FA2 /* Subdivision.swift in Sources */,
+				9E2718112CD5735000CB1FA2 /* MPVolumeViewWrapper.swift in Sources */,
 				9E2717E62CD507A200CB1FA2 /* APIError.swift in Sources */,
 				9E2717E72CD507A200CB1FA2 /* CSVLoader.swift in Sources */,
 				9E2717E82CD507A200CB1FA2 /* Environment.swift in Sources */,
@@ -417,6 +456,8 @@
 				9E2717ED2CD507A200CB1FA2 /* FavoritesManager.swift in Sources */,
 				9E2717EE2CD507A200CB1FA2 /* M3UParser.swift in Sources */,
 				9E2717EF2CD507A200CB1FA2 /* CategoryCardView.swift in Sources */,
+				9E7C4D952CD93A5000C28602 /* AboutAppView.swift in Sources */,
+				9E2718132CD5791E00CB1FA2 /* CustomAirPlayButton.swift in Sources */,
 				9E2717F02CD507A200CB1FA2 /* ChannelListView_old.swift in Sources */,
 				9E2717F12CD507A200CB1FA2 /* DashboardView_old.swift in Sources */,
 				9E2717F22CD507A200CB1FA2 /* FilterOptionsView.swift in Sources */,
@@ -429,10 +470,13 @@
 				9E2717F92CD507A200CB1FA2 /* CountryListView.swift in Sources */,
 				9E2717FA2CD507A200CB1FA2 /* DashboardView.swift in Sources */,
 				9E2717FB2CD507A200CB1FA2 /* FavoritesView.swift in Sources */,
+				9E27180F2CD5700300CB1FA2 /* CastPlayerView.swift in Sources */,
 				9E2717FC2CD507A200CB1FA2 /* LanguageListView.swift in Sources */,
 				9E2717FD2CD507A200CB1FA2 /* RegionListView.swift in Sources */,
+				9E27180B2CD56CE500CB1FA2 /* CustomAppDelegate.swift in Sources */,
 				9E2717FE2CD507A200CB1FA2 /* ContentView.swift in Sources */,
 				9E2717FF2CD507A200CB1FA2 /* iPTVApp.swift in Sources */,
+				9E7C4D912CD92FFF00C28602 /* SearchIPTVLinkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,13 +613,17 @@
 				DEVELOPMENT_ASSET_PATHS = "\"iPTV/Preview Content\"";
 				DEVELOPMENT_TEAM = C6E94YDVFW;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iPTV/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iStreamX;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -600,13 +648,17 @@
 				DEVELOPMENT_ASSET_PATHS = "\"iPTV/Preview Content\"";
 				DEVELOPMENT_TEAM = C6E94YDVFW;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iPTV/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iStreamX;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

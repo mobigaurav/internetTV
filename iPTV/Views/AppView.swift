@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AppView: View {
     @StateObject private var favoritesManager = FavoritesManager()
+    @StateObject private var purchaseManager = PurchaseManager()
+    
     var body: some View {
         TabView {
             DashboardView().tabItem{
@@ -18,6 +20,14 @@ struct AppView: View {
             FavoritesView().tabItem{
                 Label("Favorites", systemImage: "star.fill")
             }
+            
+            SearchIPTVLinkView().tabItem{
+                Label("Stream", systemImage: "magnifyingglass.circle.fill")
+            }
+            MoreView(purchaseManager: purchaseManager)
+                               .tabItem {
+                                   Label("More", systemImage: "ellipsis")
+                               }
         }
         .environmentObject(favoritesManager)
     }
