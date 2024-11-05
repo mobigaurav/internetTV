@@ -10,7 +10,8 @@ import SwiftUI
 struct SplashScreenView: View {
     @State private var isActive = false  // Controls navigation to the main view
     @State private var logoScale: CGFloat = 0.8  // Controls logo scaling for animation
-
+    @ObservedObject var viewModel = DashboardViewModel()
+    
     var body: some View {
         ZStack {
             // Background gradient
@@ -52,7 +53,7 @@ struct SplashScreenView: View {
         }
         .onAppear {
             // Delay before transitioning to the main content
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 isActive = true
             }
         }

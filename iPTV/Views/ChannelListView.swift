@@ -10,9 +10,11 @@ import SwiftUI
 struct ChannelListView: View {
     let filterType: FilterType
     @State private var filteredChannels: [ChannelInfo] = []
+    @State private var channels: [ChannelInfo] = []
     @State private var isLoading = true
     @State private var selectedStreamUrl:IdentifiableURL?
     @EnvironmentObject var favoritesManager: FavoritesManager
+    @State private var searchText = ""
     
     var body: some View {
         VStack {
@@ -20,6 +22,16 @@ struct ChannelListView: View {
                 ProgressView("Loading Channels...")
                     .padding()
             } else {
+                // Search Bar
+                TextField("Search Channels...", text: $searchText)
+                    .padding(10)
+                    .background(Color(.systemGray5))
+                    .cornerRadius(8)
+                    .padding([.horizontal, .top])
+                    .onSubmit{
+                        self.applyFilters(searchText)
+                    }
+                
                 List(filteredChannels, id: \.url) { channel in
                     HStack {
                         ChannelImageView(url: channel.logoURL)
@@ -53,6 +65,20 @@ struct ChannelListView: View {
         }
     }
     
+    
+    private func applyFilters(_ query:String) {
+        if query.isEmpty {
+            filteredChannels = self.channels
+        } else {
+            DispatchQueue.global(qos: .userInitiated).async {
+                let results = self.filteredChannels.filter { $0.name.lowercased().contains(query.lowercased()) }
+                DispatchQueue.main.async {
+                    self.filteredChannels = results
+                }
+            }
+        }
+    }
+    
     func toggleFavorite(_ channel: ChannelInfo) {
            if favoritesManager.isFavorite(channel) {
                favoritesManager.removeFromFavorites(channel)
@@ -78,7 +104,8 @@ struct ChannelListView: View {
                 }
                 
                 DispatchQueue.main.async {
-                    self.filteredChannels = channels
+                    self.channels = channels
+                    self.filteredChannels = self.channels
                     self.isLoading = false
                 }
             }

@@ -9,7 +9,8 @@ import SwiftUI
 struct MoreView: View {
     @ObservedObject var purchaseManager: PurchaseManager
     @State private var showPurchaseView = false
-
+    @State private var showShareSheet = false  // Control for presenting the share sheet
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -34,7 +35,9 @@ struct MoreView: View {
                             }
                         }
 
-                        Button(action: shareApp) {
+                        Button(action: {
+                            showShareSheet = true
+                        }) {
                             HStack {
                                 Image(systemName: "square.and.arrow.up")
                                     .foregroundColor(.blue)
@@ -66,6 +69,9 @@ struct MoreView: View {
                 .sheet(isPresented: $showPurchaseView) {
                                PurchaseView(purchaseManager: purchaseManager, isPresented: $showPurchaseView)
                            }
+                .sheet(isPresented: $showShareSheet) {
+                                ActivityView(activityItems: [URL(string: "https://apps.apple.com/us/app/istreamx/id6737782720")!])  // Replace with your app link
+                            }
             }
         }
     }
@@ -74,8 +80,10 @@ struct MoreView: View {
         let appLink = URL(string: "https://example.com")!  // Replace with actual app link
         let activityVC = UIActivityViewController(activityItems: [appLink], applicationActivities: nil)
         
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-            windowScene.windows.first?.rootViewController?.present(activityVC, animated: true, completion: nil)
+        // Present the UIActivityViewController from the root view controller
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let rootVC = windowScene.windows.first?.rootViewController {
+            rootVC.present(activityVC, animated: true, completion: nil)
         }
     }
 }

@@ -9,7 +9,10 @@ import SwiftUI
 
 struct CountryListView: View {
     @State private var countries: [String] = []
+    @State private var filteredCountries: [String] = []  // List of unique languages
     @State private var isLoading = true
+    @State private var searchText = ""
+    
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -20,9 +23,18 @@ struct CountryListView: View {
                 ProgressView("Loading Countries...")
                     .padding()
             } else {
+                // Search Bar
+                TextField("Search Countries...", text: $searchText)
+                    .padding(10)
+                    .background(Color(.systemGray5))
+                    .cornerRadius(8)
+                    .padding([.horizontal, .top])
+                    .onSubmit{
+                        self.applyFilters(searchText)
+                    }
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(countries, id: \.self) { country in
+                        ForEach(filteredCountries, id: \.self) { country in
                             NavigationLink(
                                 destination: {
                                     ChannelListView(filterType: .country(country))
@@ -42,6 +54,19 @@ struct CountryListView: View {
         .onAppear(perform: loadCountries)
     }
     
+    private func applyFilters(_ query:String) {
+        if query.isEmpty {
+            filteredCountries = self.countries
+        } else {
+            DispatchQueue.global(qos: .userInitiated).async {
+                let results = self.filteredCountries.filter { $0.lowercased().contains(query.lowercased()) }
+                DispatchQueue.main.async {
+                    self.filteredCountries = results
+                }
+            }
+        }
+    }
+    
     private func loadCountries() {
             // Load the .m3u file specific for languages
             let urlString = "https://iptv-org.github.io/iptv/index.country.m3u"
@@ -57,6 +82,7 @@ struct CountryListView: View {
                     
                     DispatchQueue.main.async {
                         self.countries = uniqueCountries
+                        self.filteredCountries = self.countries
                         self.isLoading = false
                     }
                 }

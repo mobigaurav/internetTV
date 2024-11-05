@@ -10,22 +10,32 @@ import SwiftUI
 
 struct CategoryListView: View {
     @State private var categories: [String] = []  // List of unique categories
+    @State private var filteredCategores:[String] = []
     @State private var selectedCategory: String?
     @State private var isLoading = true
+    @State private var searchText = ""
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
     var body: some View {
-        NavigationView {
             VStack {
                 if isLoading {
                     ProgressView("Loading Categories...")
                         .padding()
-                } else {                    
+                } else {
+                    // Search Bar
+                    TextField("Search categories...", text: $searchText)
+                        .padding(10)
+                        .background(Color(.systemGray5))
+                        .cornerRadius(8)
+                        .padding([.horizontal, .top])
+                        .onSubmit{
+                            self.applyFilters(searchText)
+                        }
                     ScrollView {
                         LazyVGrid(columns: columns, spacing: 20) {
-                            ForEach(categories, id: \.self) { category in
+                            ForEach(filteredCategores, id: \.self) { category in
                                 NavigationLink(
                                     destination: {
                                         ChannelListView(filterType: .category(category))
@@ -43,6 +53,18 @@ struct CategoryListView: View {
             }
             .navigationTitle("Categories")
             .onAppear(perform: loadCategories)
+    }
+    
+    private func applyFilters(_ query:String) {
+        if query.isEmpty {
+            filteredCategores = self.categories
+        } else {
+            DispatchQueue.global(qos: .userInitiated).async {
+                let results = self.filteredCategores.filter { $0.lowercased().contains(query.lowercased()) }
+                DispatchQueue.main.async {
+                    self.filteredCategores = results
+                }
+            }
         }
     }
     
@@ -61,6 +83,7 @@ struct CategoryListView: View {
                     
                     DispatchQueue.main.async {
                         self.categories = uniqueLanguages
+                        self.filteredCategores = self.categories
                         self.isLoading = false
                     }
                 }

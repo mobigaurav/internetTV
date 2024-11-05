@@ -62,6 +62,12 @@
 		9E7C4D972CD93A8000C28602 /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D962CD93A8000C28602 /* PurchaseManager.swift */; };
 		9E7C4D992CD93B4B00C28602 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D982CD93B4B00C28602 /* PurchaseView.swift */; };
 		9E7C4D9B2CD94C7E00C28602 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D9A2CD94C7E00C28602 /* SplashScreenView.swift */; };
+		9E7C4D9D2CD995D000C28602 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D9C2CD995D000C28602 /* ActivityView.swift */; };
+		9EABE4592CDA53940087D97B /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EABE4582CDA53940087D97B /* CategoryViewModel.swift */; };
+		9EABE45B2CDA53AE0087D97B /* RegionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EABE45A2CDA53AE0087D97B /* RegionViewModel.swift */; };
+		9EABE45D2CDA53CA0087D97B /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EABE45C2CDA53CA0087D97B /* CountryViewModel.swift */; };
+		9EABE45F2CDA53E10087D97B /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EABE45E2CDA53E10087D97B /* LanguageViewModel.swift */; };
+		9EABE4612CDA53F50087D97B /* ChannelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EABE4602CDA53F50087D97B /* ChannelListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +130,12 @@
 		9E7C4D962CD93A8000C28602 /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
 		9E7C4D982CD93B4B00C28602 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 		9E7C4D9A2CD94C7E00C28602 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		9E7C4D9C2CD995D000C28602 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		9EABE4582CDA53940087D97B /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		9EABE45A2CDA53AE0087D97B /* RegionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionViewModel.swift; sourceTree = "<group>"; };
+		9EABE45C2CDA53CA0087D97B /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
+		9EABE45E2CDA53E10087D97B /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
+		9EABE4602CDA53F50087D97B /* ChannelListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListViewModel.swift; sourceTree = "<group>"; };
 		A6C4B4FFBC2151D9D6D48032 /* Pods-iPTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPTV.release.xcconfig"; path = "Target Support Files/Pods-iPTV/Pods-iPTV.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +236,11 @@
 				9E2717C42CD507A200CB1FA2 /* FavoritesManager.swift */,
 				9E2717C52CD507A200CB1FA2 /* M3UParser.swift */,
 				9E7C4D962CD93A8000C28602 /* PurchaseManager.swift */,
+				9EABE4582CDA53940087D97B /* CategoryViewModel.swift */,
+				9EABE45A2CDA53AE0087D97B /* RegionViewModel.swift */,
+				9EABE45C2CDA53CA0087D97B /* CountryViewModel.swift */,
+				9EABE45E2CDA53E10087D97B /* LanguageViewModel.swift */,
+				9EABE4602CDA53F50087D97B /* ChannelListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -263,6 +280,7 @@
 				9E7C4D942CD93A5000C28602 /* AboutAppView.swift */,
 				9E7C4D982CD93B4B00C28602 /* PurchaseView.swift */,
 				9E7C4D9A2CD94C7E00C28602 /* SplashScreenView.swift */,
+				9E7C4D9C2CD995D000C28602 /* ActivityView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -438,6 +456,7 @@
 				9E2717E02CD507A200CB1FA2 /* FilterType.swift in Sources */,
 				9E2717E12CD507A200CB1FA2 /* Guide.swift in Sources */,
 				9E2717E22CD507A200CB1FA2 /* Language.swift in Sources */,
+				9E7C4D9D2CD995D000C28602 /* ActivityView.swift in Sources */,
 				9E7C4D9B2CD94C7E00C28602 /* SplashScreenView.swift in Sources */,
 				9E7C4D972CD93A8000C28602 /* PurchaseManager.swift in Sources */,
 				9E2717E32CD507A200CB1FA2 /* Region.swift in Sources */,
@@ -458,12 +477,17 @@
 				9E2717EF2CD507A200CB1FA2 /* CategoryCardView.swift in Sources */,
 				9E7C4D952CD93A5000C28602 /* AboutAppView.swift in Sources */,
 				9E2718132CD5791E00CB1FA2 /* CustomAirPlayButton.swift in Sources */,
+				9EABE45B2CDA53AE0087D97B /* RegionViewModel.swift in Sources */,
+				9EABE45D2CDA53CA0087D97B /* CountryViewModel.swift in Sources */,
+				9EABE4612CDA53F50087D97B /* ChannelListViewModel.swift in Sources */,
+				9EABE4592CDA53940087D97B /* CategoryViewModel.swift in Sources */,
 				9E2717F02CD507A200CB1FA2 /* ChannelListView_old.swift in Sources */,
 				9E2717F12CD507A200CB1FA2 /* DashboardView_old.swift in Sources */,
 				9E2717F22CD507A200CB1FA2 /* FilterOptionsView.swift in Sources */,
 				9E2717F32CD507A200CB1FA2 /* GroupButton.swift in Sources */,
 				9E2717F42CD507A200CB1FA2 /* LoadingView.swift in Sources */,
 				9E2717F52CD507A200CB1FA2 /* PlayerView.swift in Sources */,
+				9EABE45F2CDA53E10087D97B /* LanguageViewModel.swift in Sources */,
 				9E2717F62CD507A200CB1FA2 /* AppView.swift in Sources */,
 				9E2717F72CD507A200CB1FA2 /* CategoryListView.swift in Sources */,
 				9E2717F82CD507A200CB1FA2 /* ChannelListView.swift in Sources */,

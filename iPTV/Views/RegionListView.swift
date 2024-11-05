@@ -9,7 +9,10 @@ import SwiftUI
 
 struct RegionListView: View {
     @State private var regions: [String] = []
+    @State private var filteredregions: [String] = []
     @State private var isLoading = true
+    @State private var searchText = ""
+    
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -20,17 +23,18 @@ struct RegionListView: View {
                 ProgressView("Loading Regions...")
                     .padding()
             } else {
-//                List(regions, id: \.self) { region in
-//                    NavigationLink(
-//                        destination: ChannelListView(filterType: .region(region)),
-//                        label: {
-//                            Text(region)
-//                        }
-//                    )
-//                }
+                // Search Bar
+                TextField("Search Regions...", text: $searchText)
+                    .padding(10)
+                    .background(Color(.systemGray5))
+                    .cornerRadius(8)
+                    .padding([.horizontal, .top])
+                    .onSubmit{
+                        self.applyFilters(searchText)
+                    }
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(regions, id: \.self) { region in
+                        ForEach(filteredregions, id: \.self) { region in
                             NavigationLink(
                                 destination: {
                                     ChannelListView(filterType: .region(region))
@@ -50,6 +54,19 @@ struct RegionListView: View {
         .onAppear(perform: loadRegions)
     }
     
+    private func applyFilters(_ query:String) {
+        if query.isEmpty {
+            filteredregions = self.regions
+        } else {
+            DispatchQueue.global(qos: .userInitiated).async {
+                let results = self.filteredregions.filter { $0.lowercased().contains(query.lowercased()) }
+                DispatchQueue.main.async {
+                    self.filteredregions = results
+                }
+            }
+        }
+    }
+    
     private func loadRegions() {
             // Load the .m3u file specific for languages
             let urlString = "https://iptv-org.github.io/iptv/index.region.m3u"
@@ -65,6 +82,7 @@ struct RegionListView: View {
                     
                     DispatchQueue.main.async {
                         self.regions = uniqueRegions
+                        self.filteredregions = self.regions
                         self.isLoading = false
                     }
                 }

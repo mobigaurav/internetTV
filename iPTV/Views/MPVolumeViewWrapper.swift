@@ -11,8 +11,8 @@ import AVKit
 struct MPVolumeViewWrapper: UIViewRepresentable {
     func makeUIView(context: Context) -> AVRoutePickerView {
         let routePickerView = AVRoutePickerView()
-            routePickerView.activeTintColor = .blue  // Customize active state color
-            routePickerView.tintColor = .blue  // Customize inactive state color
+            routePickerView.activeTintColor = .red  // Customize active state color
+            routePickerView.tintColor = .red  // Customize inactive state color
             routePickerView.prioritizesVideoDevices = false  // Use only for audio devices if needed
             return routePickerView
     }

@@ -132,32 +132,9 @@ struct DashboardView: View {
             }
         }
         
-        
     }
     
-  
-    private func loadChannels() {
-        guard let url = URL(string: "https://iptv-org.github.io/iptv/index.m3u") else { return }
 
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-
-            if let dataString = String(data: data, encoding: .utf8) {
-                DispatchQueue.global(qos: .userInitiated).async {
-                    // Parse channels
-                    let parsedChannels = M3UParser.parse(dataString)
-                    
-                    DispatchQueue.main.async {
-                        // Update UI and save to cache
-                        self.channels = parsedChannels
-                        self.filteredChannels = parsedChannels
-                        self.isLoading = false
-                        CacheManager.shared.saveChannels(parsedChannels, forKey: self.cacheKey)
-                    }
-                }
-            }
-        }.resume()
-    }
 }
 
 

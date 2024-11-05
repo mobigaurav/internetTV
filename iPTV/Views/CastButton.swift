@@ -13,7 +13,7 @@ struct CastButton: UIViewRepresentable {
     
     func makeUIView(context: Context) -> GCKUICastButton {
        let castButton = GCKUICastButton()
-       castButton.tintColor = .blue  // Customize as desired
+       castButton.tintColor = .red  // Customize as desired
        return castButton
     }
     
