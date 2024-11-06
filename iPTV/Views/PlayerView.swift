@@ -12,40 +12,50 @@ import AVKit
 struct PlayerView: View {
     let streamURL: URL
     @State private var player: AVPlayer?
+    @State private var showPurchaseView = false
+    @ObservedObject var purchaseManager: PurchaseManager
     
     var body: some View {
-          VStack {
-              if isCastingActive {
-                  Text("Casting to TV...")
-                      .font(.headline)
-                      .padding()
-              } else {
-                  // Local player for playback
-                  VideoPlayer(player: player)
-                      .onAppear {
-                          setupPlayer()
-                      }
-              }
-          }
-          .onAppear {
-              startPlayback()
-          }
-      }
+        VStack {
+            if isCastingActive {
+                Text("Casting to TV...")
+                    .font(.headline)
+                    .padding()
+            } else {
+                // Local player for playback
+                VideoPlayer(player: player)
+                    .onAppear {
+                        setupPlayer()
+                    }
+            }
+        }
+        .sheet(isPresented: $showPurchaseView) {
+            PurchaseView(purchaseManager: purchaseManager, isPresented: $showPurchaseView)
+        }
+        .onAppear {
+            startPlayback()
+        }
+    }
     
     private func startPlayback() {
-           if isCastingActive {
-               // Play via Chromecast
-               startCasting()
-           } else {
-               // Play locally if not casting
-               setupPlayer()
-           }
-       }
+        
+        if isCastingActive {
+            // Play via Chromecast
+                startCasting()
+        } else {
+            // Play locally if not casting
+            setupPlayer()
+        }
+    }
     
     private func startCasting() {
+        if !purchaseManager.isPurchased {
+            showPurchaseView = true
+        }else {
+            showPurchaseView = false
             let mediaMetadata = GCKMediaMetadata()
             mediaMetadata.setString("Streaming Content", forKey: kGCKMetadataKeyTitle)
-
+            
             let mediaInformation = GCKMediaInformation(
                 contentID: streamURL.absoluteString,
                 streamType: .buffered,
@@ -56,34 +66,21 @@ struct PlayerView: View {
                 textTrackStyle: nil,
                 customData: nil
             )
-
+            
             if let remoteMediaClient = GCKCastContext.sharedInstance().sessionManager.currentCastSession?.remoteMediaClient {
                 remoteMediaClient.loadMedia(mediaInformation)
             }
         }
+
+    }
     
     private var isCastingActive: Bool {
-            return GCKCastContext.sharedInstance().sessionManager.hasConnectedSession()
-        }
-
-        private func setupPlayer() {
-            player = AVPlayer(url: streamURL)
-            player?.play()
-        }
+       
+        return GCKCastContext.sharedInstance().sessionManager.hasConnectedSession()
+    }
     
-//    func makeUIViewController(context: Context) -> AVPlayerViewController {
-//        let player = AVPlayer(url: streamURL)
-//        let controller = AVPlayerViewController()
-//        controller.player = player
-//        player.play()
-//        return controller
-//    }
-//    
-//    func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {}
-    
-   
-}
-
-#Preview {
-    PlayerView(streamURL: URL(fileURLWithPath: ""))
+    private func setupPlayer() {
+        player = AVPlayer(url: streamURL)
+        player?.play()
+    }
 }

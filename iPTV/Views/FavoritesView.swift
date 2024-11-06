@@ -10,7 +10,8 @@ import SwiftUI
 struct FavoritesView: View {
     @EnvironmentObject var favoritesManager: FavoritesManager
     @State private var selectedStreamUrl: IdentifiableURL?
-    
+    @ObservedObject var purchaseManager: PurchaseManager
+    @State private var showPurchaseView = false
     var body: some View {
         NavigationView {
             VStack{
@@ -29,7 +30,12 @@ struct FavoritesView: View {
                                 .foregroundColor(.primary)
                             Spacer()
                             Button(action: {
+                                if !purchaseManager.isPurchased {
+                                    showPurchaseView = true
+                                }else {
+                                    showPurchaseView = false
                                     toggleFavorite(channel)
+                                }
                                     }) {
                                         Image(systemName: favoritesManager.isFavorite(channel) ? "heart.fill" : "heart")
                                             .foregroundColor(.red)
@@ -48,8 +54,11 @@ struct FavoritesView: View {
                 }
             }
             .navigationTitle("Favorites")
+            .sheet(isPresented: $showPurchaseView) {
+                           PurchaseView(purchaseManager: purchaseManager, isPresented: $showPurchaseView)
+                       }
             .sheet(item: $selectedStreamUrl) { identifiableURL in
-                PlayerView(streamURL: identifiableURL.url)
+                PlayerView(streamURL: identifiableURL.url, purchaseManager: purchaseManager)
            
         }
         }

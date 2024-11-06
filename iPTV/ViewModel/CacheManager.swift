@@ -27,6 +27,62 @@ class CacheManager {
         return nil
     }
     
+    func saveCategory(_ channels: [String], forKey key: String) {
+            if let encoded = try? JSONEncoder().encode(channels) {
+                UserDefaults.standard.set(encoded, forKey: key)
+            }
+        }
+
+    func loadCategory(forKey key: String) -> [String]? {
+        if let data = UserDefaults.standard.data(forKey: key),
+           let decoded = try? JSONDecoder().decode([String].self, from: data) {
+            return decoded
+        }
+        return nil
+    }
+    
+    func saveCountry(_ channels: [String], forKey key: String) {
+            if let encoded = try? JSONEncoder().encode(channels) {
+                UserDefaults.standard.set(encoded, forKey: key)
+            }
+        }
+
+    func loadCountry(forKey key: String) -> [String]? {
+        if let data = UserDefaults.standard.data(forKey: key),
+           let decoded = try? JSONDecoder().decode([String].self, from: data) {
+            return decoded
+        }
+        return nil
+    }
+    
+    func saveRegion(_ channels: [String], forKey key: String) {
+            if let encoded = try? JSONEncoder().encode(channels) {
+                UserDefaults.standard.set(encoded, forKey: key)
+            }
+        }
+
+    func loadRegion(forKey key: String) -> [String]? {
+        if let data = UserDefaults.standard.data(forKey: key),
+           let decoded = try? JSONDecoder().decode([String].self, from: data) {
+            return decoded
+        }
+        return nil
+    }
+    
+    func saveLanguage(_ channels: [String], forKey key: String) {
+            if let encoded = try? JSONEncoder().encode(channels) {
+                UserDefaults.standard.set(encoded, forKey: key)
+            }
+        }
+
+    func loadLanguage(forKey key: String) -> [String]? {
+        if let data = UserDefaults.standard.data(forKey: key),
+           let decoded = try? JSONDecoder().decode([String].self, from: data) {
+            return decoded
+        }
+        return nil
+    }
+    
     // Save JSON data to a file in the documents directory
     static func save<T: Encodable>(_ object: T, to filename: String) {
         let fileURL = documentsDirectory.appendingPathComponent(filename)

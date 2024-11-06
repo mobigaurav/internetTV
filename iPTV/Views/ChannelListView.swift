@@ -15,6 +15,7 @@ struct ChannelListView: View {
     @State private var selectedStreamUrl:IdentifiableURL?
     @EnvironmentObject var favoritesManager: FavoritesManager
     @State private var searchText = ""
+    @ObservedObject var purchaseManager: PurchaseManager
     
     var body: some View {
         VStack {
@@ -33,26 +34,27 @@ struct ChannelListView: View {
                     }
                 
                 List(filteredChannels, id: \.url) { channel in
-                    HStack {
-                        ChannelImageView(url: channel.logoURL)
-                        Text(channel.name)
-                            .font(.headline)
-                            .foregroundColor(.primary)
-                        Spacer()
-                        Button(action: {
-                                    toggleFavorite(channel)
-                                }) {
-                                    Image(systemName: favoritesManager.isFavorite(channel) ? "heart.fill" : "heart")
-                                        .foregroundColor(.red)
-                                }
-                                .buttonStyle(PlainButtonStyle()) 
-                    }
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(12)
-                    .shadow(radius: 4)
-                    .onTapGesture {
-                        selectedStreamUrl = IdentifiableURL(url:channel.url)
+                    Button(action: {
+                        selectedStreamUrl = IdentifiableURL(url: channel.url)
+                    }) {
+                        HStack {
+                            ChannelImageView(url: channel.logoURL)
+                            Text(channel.name)
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                            Spacer()
+//                            Button(action: {
+//                                        toggleFavorite(channel)
+//                                    }) {
+//                                        Image(systemName: favoritesManager.isFavorite(channel) ? "heart.fill" : "heart")
+//                                            .foregroundColor(.red)
+//                                    }
+//                                    .buttonStyle(PlainButtonStyle())
+                        }
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(12)
+                        .shadow(radius: 4)
                     }
                 }
             }
@@ -60,7 +62,7 @@ struct ChannelListView: View {
         .navigationTitle(filterType.displayName)
         .onAppear(perform: loadChannels)
         .sheet(item: $selectedStreamUrl) {streamUrl in
-            PlayerView(streamURL: streamUrl.url)
+            PlayerView(streamURL: streamUrl.url, purchaseManager: purchaseManager)
             
         }
     }

@@ -71,7 +71,7 @@ struct PurchaseView: View {
                             purchaseManager.purchase()
                         }
                     }) {
-                        Text("Buy Now for $5.99")
+                        Text("Buy Now for $9.99")
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding()
@@ -108,7 +108,7 @@ struct PurchaseView: View {
         }
         .onAppear {
             isLoaded = true
-            purchaseManager.trackTrialPeriod()
+           // purchaseManager.trackTrialPeriod()
         }
     }
 }

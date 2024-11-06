@@ -38,6 +38,60 @@ class NetworkManager {
     }
     
     // Fetch channels with dynamic URL
+    func fetchAllChannels(completion: @escaping (Result<[ChannelInfo], APIError>) -> Void) {
+        guard let url = URL(string: "\(Environment.baseURL)/index.m3u") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        fetch(url: url, completion: completion)
+    }
+    
+    // Fetch channels with dynamic URL
+    func fetchAllCategories(completion: @escaping (Result<[String], APIError>) -> Void) {
+        guard let url = URL(string: "\(Environment.baseURL)/index.category.m3u") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        fetch(url: url, completion: completion)
+    }
+    
+    // Fetch channels with dynamic URL
+    func fetchAllCountries(completion: @escaping (Result<[Channel], APIError>) -> Void) {
+        guard let url = URL(string: "\(Environment.baseURL)/index.country.m3u") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        fetch(url: url, completion: completion)
+    }
+    
+    // Fetch channels with dynamic URL
+    func fetchAllLanguages(completion: @escaping (Result<[Channel], APIError>) -> Void) {
+        guard let url = URL(string: "\(Environment.baseURL)/index.language.m3u") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        fetch(url: url, completion: completion)
+    }
+    
+    // Fetch channels with dynamic URL
+    func fetchAllRegions(completion: @escaping (Result<[Channel], APIError>) -> Void) {
+        guard let url = URL(string: "\(Environment.baseURL)/index.region.m3u") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        fetch(url: url, completion: completion)
+    }
+    
+    // Fetch channels with dynamic URL
+    func fetchChannelByType(completion: @escaping (Result<[Channel], APIError>) -> Void) {
+        guard let url = URL(string: "\(Environment.baseURL)/index.m3u.json") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        fetch(url: url, completion: completion)
+    }
+    
+    // Fetch channels with dynamic URL
     func fetchChannels(completion: @escaping (Result<[Channel], APIError>) -> Void) {
         guard let url = URL(string: "\(Environment.baseURL)/index.m3u.json") else {
             completion(.failure(.invalidURL))

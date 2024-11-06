@@ -18,7 +18,8 @@ struct Environment {
     
     private static let developmentBaseURL = "https://dev.iptv-org.github.io/api"
     private static let qaBaseURL = "https://qa.iptv-org.github.io/api"
-    private static let productionBaseURL = "https://iptv-org.github.io/api"
+   // private static let productionBaseURL = "https://iptv-org.github.io/api"
+    private static let productionBaseURL = "https://iptv-org.github.io/iptv/"
     
     static var baseURL:String {
         switch current {

@@ -16,6 +16,7 @@ struct SearchIPTVLinkView: View {
     @State private var selectedChannel: ChannelInfo?
     @State private var selectedStreamUrl:IdentifiableURL?
     @EnvironmentObject var favoritesManager: FavoritesManager
+    @ObservedObject var purchaseManager: PurchaseManager
     
     func toggleFavorite(_ channel: ChannelInfo) {
            if favoritesManager.isFavorite(channel) {
@@ -70,7 +71,7 @@ struct SearchIPTVLinkView: View {
             }
             .navigationTitle("Stream")
             .sheet(item: $selectedStreamUrl) { channel in
-                PlayerView(streamURL: channel.url)
+                PlayerView(streamURL: channel.url, purchaseManager: purchaseManager)
             }
         }
     }
@@ -95,6 +96,6 @@ struct SearchIPTVLinkView: View {
 }
 
 
-#Preview {
-    SearchIPTVLinkView()
-}
+//#Preview {
+//    SearchIPTVLinkView()
+//}

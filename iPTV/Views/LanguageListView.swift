@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct LanguageListView: View {
-    @State private var languages: [String] = []  // List of unique languages
-    @State private var filteredlanguages: [String] = []  // List of unique languages
-    @State private var isLoading = true
     @State private var searchText = ""
-    
+    @ObservedObject var viewModel = LanguageViewModel()
+    @ObservedObject var purchaseManager: PurchaseManager
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
     var body: some View {
         VStack {
-            if isLoading {
+            if viewModel.isLoading {
                 ProgressView("Loading Languages...")
                     .padding()
             } else {
@@ -34,10 +32,10 @@ struct LanguageListView: View {
                     }
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(filteredlanguages, id: \.self) { language in
+                        ForEach(viewModel.filteredLang, id: \.self) { language in
                             NavigationLink(
                                 destination: {
-                                    ChannelListView(filterType: .language(language))
+                                    ChannelListView(filterType: .language(language), purchaseManager: purchaseManager)
                                 }
                             ) {
                                 CategoryCardView(category: language)
@@ -51,46 +49,23 @@ struct LanguageListView: View {
             }
         }
         .navigationTitle("Languages")
-        .onAppear(perform: loadLanguages)
     }
     
     private func applyFilters(_ query:String) {
         if query.isEmpty {
-            filteredlanguages = self.languages
+            viewModel.filteredLang = viewModel.languages
         } else {
             DispatchQueue.global(qos: .userInitiated).async {
-                let results = self.filteredlanguages.filter { $0.lowercased().contains(query.lowercased()) }
+                let results = viewModel.languages.filter { $0.lowercased().contains(query.lowercased()) }
                 DispatchQueue.main.async {
-                    self.filteredlanguages = results
+                    viewModel.filteredLang = results
                 }
             }
         }
     }
-    
-    private func loadLanguages() {
-            // Load the .m3u file specific for languages
-            let urlString = "https://iptv-org.github.io/iptv/index.language.m3u"
-            guard let url = URL(string: urlString) else { return }
-            
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                guard let data = data, error == nil else { return }
-                if let dataString = String(data: data, encoding: .utf8) {
-                    let parsedChannels = M3UParser.parse(dataString)
-                    
-                    // Extract unique languages using the group-title attribute
-                    let uniqueLanguages = Set(parsedChannels.compactMap { $0.groupTitle }).sorted()
-                    
-                    DispatchQueue.main.async {
-                        self.languages = uniqueLanguages
-                        self.filteredlanguages = self.languages
-                        self.isLoading = false
-                    }
-                }
-            }.resume()
-        }
 }
 
 
-#Preview {
-    LanguageListView()
-}
+//#Preview {
+//    LanguageListView()
+//}

@@ -56,6 +56,8 @@
 		9E27180F2CD5700300CB1FA2 /* CastPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27180E2CD5700300CB1FA2 /* CastPlayerView.swift */; };
 		9E2718112CD5735000CB1FA2 /* MPVolumeViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2718102CD5735000CB1FA2 /* MPVolumeViewWrapper.swift */; };
 		9E2718132CD5791E00CB1FA2 /* CustomAirPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2718122CD5791E00CB1FA2 /* CustomAirPlayButton.swift */; };
+		9E716C5A2CDC0C9F003A25A8 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E716C592CDC0C9F003A25A8 /* NetworkMonitor.swift */; };
+		9E716C5C2CDC0CC2003A25A8 /* OfflineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E716C5B2CDC0CC2003A25A8 /* OfflineView.swift */; };
 		9E7C4D912CD92FFF00C28602 /* SearchIPTVLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D902CD92FFF00C28602 /* SearchIPTVLinkView.swift */; };
 		9E7C4D932CD93A1800C28602 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D922CD93A1700C28602 /* MoreView.swift */; };
 		9E7C4D952CD93A5000C28602 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D942CD93A5000C28602 /* AboutAppView.swift */; };
@@ -124,6 +126,8 @@
 		9E27180E2CD5700300CB1FA2 /* CastPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastPlayerView.swift; sourceTree = "<group>"; };
 		9E2718102CD5735000CB1FA2 /* MPVolumeViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPVolumeViewWrapper.swift; sourceTree = "<group>"; };
 		9E2718122CD5791E00CB1FA2 /* CustomAirPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAirPlayButton.swift; sourceTree = "<group>"; };
+		9E716C592CDC0C9F003A25A8 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		9E716C5B2CDC0CC2003A25A8 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 		9E7C4D902CD92FFF00C28602 /* SearchIPTVLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIPTVLinkView.swift; sourceTree = "<group>"; };
 		9E7C4D922CD93A1700C28602 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		9E7C4D942CD93A5000C28602 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 				9EABE45C2CDA53CA0087D97B /* CountryViewModel.swift */,
 				9EABE45E2CDA53E10087D97B /* LanguageViewModel.swift */,
 				9EABE4602CDA53F50087D97B /* ChannelListViewModel.swift */,
+				9E716C592CDC0C9F003A25A8 /* NetworkMonitor.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				9E7C4D982CD93B4B00C28602 /* PurchaseView.swift */,
 				9E7C4D9A2CD94C7E00C28602 /* SplashScreenView.swift */,
 				9E7C4D9C2CD995D000C28602 /* ActivityView.swift */,
+				9E716C5B2CDC0CC2003A25A8 /* OfflineView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -458,6 +464,7 @@
 				9E2717E22CD507A200CB1FA2 /* Language.swift in Sources */,
 				9E7C4D9D2CD995D000C28602 /* ActivityView.swift in Sources */,
 				9E7C4D9B2CD94C7E00C28602 /* SplashScreenView.swift in Sources */,
+				9E716C5A2CDC0C9F003A25A8 /* NetworkMonitor.swift in Sources */,
 				9E7C4D972CD93A8000C28602 /* PurchaseManager.swift in Sources */,
 				9E2717E32CD507A200CB1FA2 /* Region.swift in Sources */,
 				9E7C4D932CD93A1800C28602 /* MoreView.swift in Sources */,
@@ -486,6 +493,7 @@
 				9E2717F22CD507A200CB1FA2 /* FilterOptionsView.swift in Sources */,
 				9E2717F32CD507A200CB1FA2 /* GroupButton.swift in Sources */,
 				9E2717F42CD507A200CB1FA2 /* LoadingView.swift in Sources */,
+				9E716C5C2CDC0CC2003A25A8 /* OfflineView.swift in Sources */,
 				9E2717F52CD507A200CB1FA2 /* PlayerView.swift in Sources */,
 				9EABE45F2CDA53E10087D97B /* LanguageViewModel.swift in Sources */,
 				9E2717F62CD507A200CB1FA2 /* AppView.swift in Sources */,

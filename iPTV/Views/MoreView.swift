@@ -25,7 +25,7 @@ struct MoreView: View {
                                 HStack {
                                     Image(systemName: "cart.fill")
                                         .foregroundColor(.green)
-                                    Text("Buy Paid Version - $5.99")
+                                    Text("Buy Paid Version - $9.99")
                                         .foregroundColor(.primary)
                                         .font(.body)
                                 }

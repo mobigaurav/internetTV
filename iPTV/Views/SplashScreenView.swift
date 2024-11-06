@@ -31,7 +31,7 @@ struct SplashScreenView: View {
                     .foregroundColor(.yellow)
                     .scaleEffect(logoScale)
                     .onAppear {
-                        withAnimation(.easeOut(duration: 1.5).repeatForever(autoreverses: true)) {
+                        withAnimation(.easeOut(duration: 0.5).repeatForever(autoreverses: true)) {
                             logoScale = 1.1  // Pulsing effect
                         }
                     }
@@ -53,7 +53,7 @@ struct SplashScreenView: View {
         }
         .onAppear {
             // Delay before transitioning to the main content
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 isActive = true
             }
         }

@@ -57,9 +57,9 @@ struct ChannelListViewOld: View {
             
             .background(Color(UIColor.systemGroupedBackground))
            // .navigationTitle(category.name)
-            .sheet(item: $selectedStream) { identifiableURL in
-                PlayerView(streamURL: identifiableURL.url)
-            }
+//            .sheet(item: $selectedStream) { identifiableURL in
+//                PlayerView(streamURL: identifiableURL.url)
+//            }
         }
     }
 }
