@@ -17,55 +17,72 @@ struct SearchIPTVLinkView: View {
     @State private var selectedStreamUrl:IdentifiableURL?
     @EnvironmentObject var favoritesManager: FavoritesManager
     @ObservedObject var purchaseManager: PurchaseManager
+    @State private var showBrowser = false
     
     func toggleFavorite(_ channel: ChannelInfo) {
-           if favoritesManager.isFavorite(channel) {
-               favoritesManager.removeFromFavorites(channel)
-           } else {
-               favoritesManager.addToFavorites(channel)
-           }
-       }
+        if favoritesManager.isFavorite(channel) {
+            favoritesManager.removeFromFavorites(channel)
+        } else {
+            favoritesManager.addToFavorites(channel)
+        }
+    }
     
     var body: some View {
         NavigationView {
             VStack {
                 // Search bar for IPTV link
-                TextField("Enter IPTV link...", text: $iptvLink, onCommit: fetchChannels)
-                    .padding(10)
-                    .background(Color(.systemGray5))
-                    .cornerRadius(8)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding([.horizontal, .top])
-                    .keyboardType(.URL)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
+                HStack {
+                    TextField("Enter IPTV link...", text: $iptvLink, onCommit: fetchChannels)
+                        .padding(10)
+                        .background(Color(.systemGray5))
+                        .cornerRadius(8)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding([.horizontal, .top])
+                        .keyboardType(.URL)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                        .frame(maxWidth: .infinity)
+                    
+                    Button(action: {
+                        showBrowser = true
+                    }) {
+                        Image(systemName: "globe")
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .padding(.horizontal, 5)
+                    }
+                    .sheet(isPresented: $showBrowser) {
+                        InAppBrowserView(url: URL(string: "https://www.google.com")!)
+                    }
+                }
+        
                 
                 if isLoading {
                     ProgressView("Loading channels...")
                         .padding()
                 } else {
                     List(channels, id: \.id) { channel in
-                            HStack {
-                                ChannelImageView(url: channel.logoURL)
-                                Text(channel.name)
-                                    .font(.headline)
-                                    .foregroundColor(.primary)
-                                Spacer()
-                                Button(action: {
-                                            toggleFavorite(channel)
-                                        }) {
-                                            Image(systemName: favoritesManager.isFavorite(channel) ? "heart.fill" : "heart")
-                                                .foregroundColor(.red)
-                                        }
-                                        .buttonStyle(PlainButtonStyle()) 
+                        HStack {
+                            ChannelImageView(url: channel.logoURL)
+                            Text(channel.name)
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                            Spacer()
+                            Button(action: {
+                                toggleFavorite(channel)
+                            }) {
+                                Image(systemName: favoritesManager.isFavorite(channel) ? "heart.fill" : "heart")
+                                    .foregroundColor(.red)
                             }
-                            .padding()
-                            .background(Color.white)
-                            .cornerRadius(12)
-                            .shadow(radius: 4)
-                            .onTapGesture {
-                                selectedStreamUrl = IdentifiableURL(url:channel.url)
-                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(12)
+                        .shadow(radius: 4)
+                        .onTapGesture {
+                            selectedStreamUrl = IdentifiableURL(url:channel.url)
+                        }
                     }
                 }
             }
@@ -75,7 +92,7 @@ struct SearchIPTVLinkView: View {
             }
         }
     }
-
+    
     private func fetchChannels() {
         guard let url = URL(string: iptvLink) else { return }
         isLoading = true
@@ -97,5 +114,6 @@ struct SearchIPTVLinkView: View {
 
 
 //#Preview {
-//    SearchIPTVLinkView()
+//    var purchaseManager:PurchaseManager
+//    SearchIPTVLinkView(purchaseManager: purchaseManager)
 //}

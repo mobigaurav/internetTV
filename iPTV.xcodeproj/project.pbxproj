@@ -53,11 +53,11 @@
 		9E2718072CD507A200CB1FA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E2717D82CD507A200CB1FA2 /* Assets.xcassets */; };
 		9E27180B2CD56CE500CB1FA2 /* CustomAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27180A2CD56CE500CB1FA2 /* CustomAppDelegate.swift */; };
 		9E27180D2CD56E6E00CB1FA2 /* CastButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27180C2CD56E6E00CB1FA2 /* CastButton.swift */; };
-		9E27180F2CD5700300CB1FA2 /* CastPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27180E2CD5700300CB1FA2 /* CastPlayerView.swift */; };
 		9E2718112CD5735000CB1FA2 /* MPVolumeViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2718102CD5735000CB1FA2 /* MPVolumeViewWrapper.swift */; };
-		9E2718132CD5791E00CB1FA2 /* CustomAirPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2718122CD5791E00CB1FA2 /* CustomAirPlayButton.swift */; };
 		9E716C5A2CDC0C9F003A25A8 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E716C592CDC0C9F003A25A8 /* NetworkMonitor.swift */; };
 		9E716C5C2CDC0CC2003A25A8 /* OfflineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E716C5B2CDC0CC2003A25A8 /* OfflineView.swift */; };
+		9E716C602CDD523F003A25A8 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E716C5F2CDD523F003A25A8 /* MailView.swift */; };
+		9E716C622CDD5781003A25A8 /* InAppBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E716C612CDD5781003A25A8 /* InAppBrowserView.swift */; };
 		9E7C4D912CD92FFF00C28602 /* SearchIPTVLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D902CD92FFF00C28602 /* SearchIPTVLinkView.swift */; };
 		9E7C4D932CD93A1800C28602 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D922CD93A1700C28602 /* MoreView.swift */; };
 		9E7C4D952CD93A5000C28602 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7C4D942CD93A5000C28602 /* AboutAppView.swift */; };
@@ -123,11 +123,11 @@
 		9E2718092CD568F600CB1FA2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9E27180A2CD56CE500CB1FA2 /* CustomAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAppDelegate.swift; sourceTree = "<group>"; };
 		9E27180C2CD56E6E00CB1FA2 /* CastButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastButton.swift; sourceTree = "<group>"; };
-		9E27180E2CD5700300CB1FA2 /* CastPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastPlayerView.swift; sourceTree = "<group>"; };
 		9E2718102CD5735000CB1FA2 /* MPVolumeViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPVolumeViewWrapper.swift; sourceTree = "<group>"; };
-		9E2718122CD5791E00CB1FA2 /* CustomAirPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAirPlayButton.swift; sourceTree = "<group>"; };
 		9E716C592CDC0C9F003A25A8 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		9E716C5B2CDC0CC2003A25A8 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
+		9E716C5F2CDD523F003A25A8 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		9E716C612CDD5781003A25A8 /* InAppBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppBrowserView.swift; sourceTree = "<group>"; };
 		9E7C4D902CD92FFF00C28602 /* SearchIPTVLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIPTVLinkView.swift; sourceTree = "<group>"; };
 		9E7C4D922CD93A1700C28602 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		9E7C4D942CD93A5000C28602 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
@@ -266,27 +266,14 @@
 		9E2717D72CD507A200CB1FA2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9E716C5E2CDC1155003A25A8 /* Utils */,
+				9E716C5D2CDC1130003A25A8 /* Category */,
 				9E2717CE2CD507A200CB1FA2 /* Old Files */,
 				9E2717CF2CD507A200CB1FA2 /* AppView.swift */,
-				9E2717D02CD507A200CB1FA2 /* CategoryListView.swift */,
-				9E2717CD2CD507A200CB1FA2 /* PlayerView.swift */,
-				9E2717D12CD507A200CB1FA2 /* ChannelListView.swift */,
-				9E2717D22CD507A200CB1FA2 /* CountryListView.swift */,
 				9E2717D32CD507A200CB1FA2 /* DashboardView.swift */,
-				9E2717D42CD507A200CB1FA2 /* FavoritesView.swift */,
-				9E2717D52CD507A200CB1FA2 /* LanguageListView.swift */,
-				9E2717D62CD507A200CB1FA2 /* RegionListView.swift */,
-				9E27180C2CD56E6E00CB1FA2 /* CastButton.swift */,
-				9E27180E2CD5700300CB1FA2 /* CastPlayerView.swift */,
-				9E2718102CD5735000CB1FA2 /* MPVolumeViewWrapper.swift */,
-				9E2718122CD5791E00CB1FA2 /* CustomAirPlayButton.swift */,
 				9E7C4D902CD92FFF00C28602 /* SearchIPTVLinkView.swift */,
 				9E7C4D922CD93A1700C28602 /* MoreView.swift */,
-				9E7C4D942CD93A5000C28602 /* AboutAppView.swift */,
-				9E7C4D982CD93B4B00C28602 /* PurchaseView.swift */,
 				9E7C4D9A2CD94C7E00C28602 /* SplashScreenView.swift */,
-				9E7C4D9C2CD995D000C28602 /* ActivityView.swift */,
-				9E716C5B2CDC0CC2003A25A8 /* OfflineView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -307,6 +294,35 @@
 				9E27180A2CD56CE500CB1FA2 /* CustomAppDelegate.swift */,
 			);
 			path = iPTV;
+			sourceTree = "<group>";
+		};
+		9E716C5D2CDC1130003A25A8 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9E2717D02CD507A200CB1FA2 /* CategoryListView.swift */,
+				9E2717D12CD507A200CB1FA2 /* ChannelListView.swift */,
+				9E2717D22CD507A200CB1FA2 /* CountryListView.swift */,
+				9E2717D52CD507A200CB1FA2 /* LanguageListView.swift */,
+				9E2717D62CD507A200CB1FA2 /* RegionListView.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		9E716C5E2CDC1155003A25A8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9E7C4D942CD93A5000C28602 /* AboutAppView.swift */,
+				9E7C4D982CD93B4B00C28602 /* PurchaseView.swift */,
+				9E716C5B2CDC0CC2003A25A8 /* OfflineView.swift */,
+				9E7C4D9C2CD995D000C28602 /* ActivityView.swift */,
+				9E2717CD2CD507A200CB1FA2 /* PlayerView.swift */,
+				9E27180C2CD56E6E00CB1FA2 /* CastButton.swift */,
+				9E2718102CD5735000CB1FA2 /* MPVolumeViewWrapper.swift */,
+				9E2717D42CD507A200CB1FA2 /* FavoritesView.swift */,
+				9E716C5F2CDD523F003A25A8 /* MailView.swift */,
+				9E716C612CDD5781003A25A8 /* InAppBrowserView.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		AE6CD72F28A86511B1778857 /* Frameworks */ = {
@@ -475,6 +491,7 @@
 				9E2717E62CD507A200CB1FA2 /* APIError.swift in Sources */,
 				9E2717E72CD507A200CB1FA2 /* CSVLoader.swift in Sources */,
 				9E2717E82CD507A200CB1FA2 /* Environment.swift in Sources */,
+				9E716C622CDD5781003A25A8 /* InAppBrowserView.swift in Sources */,
 				9E2717E92CD507A200CB1FA2 /* NetworkManager.swift in Sources */,
 				9E2717EA2CD507A200CB1FA2 /* CacheManager.swift in Sources */,
 				9E2717EB2CD507A200CB1FA2 /* ChannelViewModel.swift in Sources */,
@@ -483,7 +500,6 @@
 				9E2717EE2CD507A200CB1FA2 /* M3UParser.swift in Sources */,
 				9E2717EF2CD507A200CB1FA2 /* CategoryCardView.swift in Sources */,
 				9E7C4D952CD93A5000C28602 /* AboutAppView.swift in Sources */,
-				9E2718132CD5791E00CB1FA2 /* CustomAirPlayButton.swift in Sources */,
 				9EABE45B2CDA53AE0087D97B /* RegionViewModel.swift in Sources */,
 				9EABE45D2CDA53CA0087D97B /* CountryViewModel.swift in Sources */,
 				9EABE4612CDA53F50087D97B /* ChannelListViewModel.swift in Sources */,
@@ -492,6 +508,7 @@
 				9E2717F12CD507A200CB1FA2 /* DashboardView_old.swift in Sources */,
 				9E2717F22CD507A200CB1FA2 /* FilterOptionsView.swift in Sources */,
 				9E2717F32CD507A200CB1FA2 /* GroupButton.swift in Sources */,
+				9E716C602CDD523F003A25A8 /* MailView.swift in Sources */,
 				9E2717F42CD507A200CB1FA2 /* LoadingView.swift in Sources */,
 				9E716C5C2CDC0CC2003A25A8 /* OfflineView.swift in Sources */,
 				9E2717F52CD507A200CB1FA2 /* PlayerView.swift in Sources */,
@@ -502,7 +519,6 @@
 				9E2717F92CD507A200CB1FA2 /* CountryListView.swift in Sources */,
 				9E2717FA2CD507A200CB1FA2 /* DashboardView.swift in Sources */,
 				9E2717FB2CD507A200CB1FA2 /* FavoritesView.swift in Sources */,
-				9E27180F2CD5700300CB1FA2 /* CastPlayerView.swift in Sources */,
 				9E2717FC2CD507A200CB1FA2 /* LanguageListView.swift in Sources */,
 				9E2717FD2CD507A200CB1FA2 /* RegionListView.swift in Sources */,
 				9E27180B2CD56CE500CB1FA2 /* CustomAppDelegate.swift in Sources */,
