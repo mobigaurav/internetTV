@@ -28,7 +28,7 @@ struct MoreView: View {
                                 HStack {
                                     Image(systemName: "cart.fill")
                                         .foregroundColor(.green)
-                                    Text("Buy Paid Version - $9.99")
+                                    Text("Buy Paid Version - $4.99")
                                         .foregroundColor(.primary)
                                         .font(.body)
                                 }
@@ -36,8 +36,11 @@ struct MoreView: View {
                                 .background(Color.white)
                                 .cornerRadius(10)
                             }
+                            .sheet(isPresented: $showPurchaseView) {
+                                PurchaseView(purchaseManager: purchaseManager, isPresented: $showPurchaseView)
+                            }
                         }
-                        
+                      
                         
                         
                         Button(action: {
@@ -54,16 +57,13 @@ struct MoreView: View {
                             .background(Color.white)
                             .cornerRadius(10)
                         }
+                        .sheet(isPresented: $showShareSheet) {
+                            ActivityView(activityItems: [URL(string: "https://apps.apple.com/us/app/istreamx/id6737782720")!])
+                        }
                         
                         Button(action: {
-                            if purchaseManager.isPurchased {
-                                showPurchaseView = true
-                                showMailView = false
-                            }else {
-                                showPurchaseView = false
-                                showMailView = true
-                            }
-                            
+                                //showMailView = true
+                            openGmail()
                         }) {
                             HStack {
                                 Image(systemName: "envelope")
@@ -76,25 +76,26 @@ struct MoreView: View {
                             .background(Color.white)
                             .cornerRadius(10)
                         }
-                        .actionSheet(isPresented: $showMailView) {
-                            ActionSheet(
-                                title: Text("Choose Email App"),
-                                message: Text("Select an email app to contact us"),
-                                buttons: [
-                                    .default(Text("Apple Mail")) {
-                                        if MFMailComposeViewController.canSendMail() {
-                                            showMailView = true
-                                        } else {
-                                            showMailErrorAlert = true
-                                        }
-                                    },
-                                    .default(Text("Gmail")) {
-                                        openGmail()
-                                    },
-                                    .cancel()
-                                ]
-                            )
-                        }
+//                        .actionSheet(isPresented: $showMailView) {
+////                            ActionSheet(
+////                                title: Text("Choose Email App"),
+////                                message: Text("Select an email app to contact us"),
+////                                buttons: [
+////                                    .default(Text("Apple Mail")) {
+////                                        if MFMailComposeViewController.canSendMail() {
+////                                            showMailView = true
+////                                        } else {
+////                                            showMailErrorAlert = true
+////                                        }
+////                                    },
+////                                    .default(Text("Gmail")) {
+////                                        openGmail()
+////                                    },
+////                                    .cancel()
+////                                ]
+////                            )
+//                           
+//                        }
                         
                         .alert(isPresented: $showMailErrorAlert) {
                             Alert(
@@ -120,23 +121,23 @@ struct MoreView: View {
                     .padding(.vertical, 8)
                 }
                 .navigationTitle("More")
-                .sheet(isPresented: $showPurchaseView) {
-                    PurchaseView(purchaseManager: purchaseManager, isPresented: $showPurchaseView)
-                }
-                .sheet(isPresented: $showShareSheet) {
-                    ActivityView(activityItems: [URL(string: "https://apps.apple.com/us/app/istreamx/id6737782720")!])  // Replace with your app link
-                }
-                .sheet(isPresented: $showMailView) {
-                    if MFMailComposeViewController.canSendMail() {
-                        MailView(
-                            recipients: ["mobigaurav@gmail.com"],  // Replace with your email
-                            subject: "App Feedback",
-                            messageBody: "Hello, I would like to provide feedback about the app."
-                        )
-                    } else {
-                        Text("Mail services are not available.")
-                    }
-                }
+//                .sheet(isPresented: $showPurchaseView) {
+//                    PurchaseView(purchaseManager: purchaseManager, isPresented: $showPurchaseView)
+//                }
+//                .sheet(isPresented: $showShareSheet) {
+//                    ActivityView(activityItems: [URL(string: "https://apps.apple.com/us/app/istreamx/id6737782720")!])  // Replace with your app link
+//                }
+//                .sheet(isPresented: $showMailView) {
+//                    if MFMailComposeViewController.canSendMail() {
+//                        MailView(
+//                            recipients: ["mobigaurav@gmail.com"],  // Replace with your email
+//                            subject: "App Feedback",
+//                            messageBody: "Hello, I would like to provide feedback about the app."
+//                        )
+//                    } else {
+//                        Text("Mail services are not available.")
+//                    }
+//                }
             }
         }
     }

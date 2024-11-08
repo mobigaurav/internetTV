@@ -45,15 +45,8 @@ struct DashboardView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 15) {
                             // Navigate to Category List
-                            Button(action: {
-                                if !purchaseManager.isPurchased {
-                                    showPurchaseView = true
-                                    shouldNavigate = false
-                                }else {
-                                    showPurchaseView = false
-                                    shouldNavigate = true
-                                }
-                            }) {
+                     
+                            NavigationLink(destination: CategoryListView(purchaseManager: purchaseManager)) {
                                 Text("Category")
                                     .padding(.vertical, 8)
                                     .padding(.horizontal, 12)
@@ -61,21 +54,9 @@ struct DashboardView: View {
                                     .foregroundColor(.white)
                                     .cornerRadius(15)
                             }
-                            .background(
-                                NavigationLink(destination: CategoryListView(purchaseManager: purchaseManager), isActive: $shouldNavigate) {
-                                    EmptyView()
-                                }
-                            )
-                            
-                            Button(action: {
-                                if !purchaseManager.isPurchased {
-                                    showPurchaseView = true
-                                    shouldNavigate = false
-                                }else {
-                                    showPurchaseView = false
-                                    shouldNavigate = true
-                                }
-                            }) {
+                           
+                 
+                            NavigationLink(destination: RegionListView(purchaseManager: purchaseManager)) {
                                 Text("Regions")
                                     .padding(.vertical, 8)
                                     .padding(.horizontal, 12)
@@ -83,15 +64,9 @@ struct DashboardView: View {
                                     .foregroundColor(.white)
                                     .cornerRadius(15)
                             }
-                            .background(
-                                NavigationLink(destination: RegionListView(purchaseManager: purchaseManager), isActive: $shouldNavigate) {
-                                    EmptyView()
-                                }
-                            )
-                            
-                            Button(action: {
-                                    shouldNavigate = true
-                            }) {
+                         
+                     
+                            NavigationLink(destination: LanguageListView(purchaseManager: purchaseManager)) {
                                 Text("Language")
                                     .padding(.vertical, 8)
                                     .padding(.horizontal, 12)
@@ -99,15 +74,9 @@ struct DashboardView: View {
                                     .foregroundColor(.white)
                                     .cornerRadius(15)
                             }
-                            .background(
-                                NavigationLink(destination: LanguageListView(purchaseManager: purchaseManager), isActive: $shouldNavigate) {
-                                    EmptyView()
-                                }
-                            )
-                            
-                            Button(action: {
-                                    shouldNavigate = true
-                            }) {
+                         
+                        
+                            NavigationLink(destination: CountryListView(purchaseManager: purchaseManager)) {
                                 Text("Countries")
                                     .padding(.vertical, 8)
                                     .padding(.horizontal, 12)
@@ -115,13 +84,6 @@ struct DashboardView: View {
                                     .foregroundColor(.white)
                                     .cornerRadius(15)
                             }
-                            .background(
-                                NavigationLink(destination: CountryListView(purchaseManager: purchaseManager), isActive: $shouldNavigate) {
-                                    EmptyView()
-                                }
-                            )
-      
-                            
                         }
                         .padding(.horizontal)
                     }

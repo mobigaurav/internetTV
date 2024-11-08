@@ -71,7 +71,7 @@ struct PurchaseView: View {
                             purchaseManager.purchase()
                         }
                     }) {
-                        Text("Buy Now for $9.99")
+                        Text("Buy Now for $4.99")
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding()
