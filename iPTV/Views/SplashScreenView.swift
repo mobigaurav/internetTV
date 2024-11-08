@@ -37,8 +37,14 @@ struct SplashScreenView: View {
                     }
 
                 // App name
-                Text("IPTV Streamer")
+                Text("iStreamX")
                     .font(.largeTitle)
+                    .foregroundColor(.white)
+                    .bold()
+                    .padding(.top, 20)
+                
+                Text("iPTV streaming player")
+                    .font(.subheadline)
                     .foregroundColor(.white)
                     .bold()
                     .padding(.top, 20)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ChannelInfo: Identifiable, Codable {
+struct ChannelInfo: Identifiable, Codable, Hashable {
     var id:UUID = UUID()
     let name: String
     let url: URL

@@ -33,14 +33,14 @@ struct DashboardView: View {
                 }
                 else {
                     // Search Bar
-                    TextField("Search channels...", text: $searchText)
-                        .padding(10)
-                        .background(Color(.systemGray5))
-                        .cornerRadius(8)
-                        .padding([.horizontal, .top])
-                        .onSubmit{
-                            self.applyFilters(searchText)
-                        }
+//                    TextField("Search channels...", text: $searchText)
+//                        .padding(10)
+//                        .background(Color(.systemGray5))
+//                        .cornerRadius(8)
+//                        .padding([.horizontal, .top])
+//                        .onSubmit{
+//                            self.applyFilters(searchText)
+//                        }
                     // Horizontal Scrollable Buttons
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 15) {
@@ -76,6 +76,22 @@ struct DashboardView: View {
                                     shouldNavigate = true
                                 }
                             }) {
+                                Text("Regions")
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal, 12)
+                                    .background(Color.blue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(15)
+                            }
+                            .background(
+                                NavigationLink(destination: RegionListView(purchaseManager: purchaseManager), isActive: $shouldNavigate) {
+                                    EmptyView()
+                                }
+                            )
+                            
+                            Button(action: {
+                                    shouldNavigate = true
+                            }) {
                                 Text("Language")
                                     .padding(.vertical, 8)
                                     .padding(.horizontal, 12)
@@ -90,13 +106,7 @@ struct DashboardView: View {
                             )
                             
                             Button(action: {
-                                if !purchaseManager.isPurchased {
-                                    showPurchaseView = true
-                                    shouldNavigate = false
-                                }else {
-                                    showPurchaseView = false
                                     shouldNavigate = true
-                                }
                             }) {
                                 Text("Countries")
                                     .padding(.vertical, 8)
@@ -110,35 +120,12 @@ struct DashboardView: View {
                                     EmptyView()
                                 }
                             )
-                           
-                           
-                            Button(action: {
-                                if !purchaseManager.isPurchased {
-                                    showPurchaseView = true
-                                    shouldNavigate = false
-                                }else {
-                                    showPurchaseView = false
-                                    shouldNavigate = true
-                                }
-                            }) {
-                                Text("Regions")
-                                    .padding(.vertical, 8)
-                                    .padding(.horizontal, 12)
-                                    .background(Color.blue)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(15)
-                            }
-                            .background(
-                                NavigationLink(destination: RegionListView(purchaseManager: purchaseManager), isActive: $shouldNavigate) {
-                                    EmptyView()
-                                }
-                            )
-                           
+      
                             
                         }
                         .padding(.horizontal)
                     }
-                    List(viewModel.channels) { channel in
+                    List(viewModel.filteredChannels, id: \.self) { channel in
                         Button(action: {
                             selectedStreamUrl = IdentifiableURL(url: channel.url)
                         }) {
