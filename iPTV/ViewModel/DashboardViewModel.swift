@@ -33,7 +33,7 @@ class DashboardViewModel: ObservableObject {
         guard let url = URL(string: "https://iptv-org.github.io/iptv/index.m3u") else { return }
 
         URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, let error = error else { return }
+            guard let data = data, error == nil else { return }
 
             if let dataString = String(data: data, encoding: .utf8) {
                 DispatchQueue.global(qos: .userInitiated).async {
@@ -45,7 +45,7 @@ class DashboardViewModel: ObservableObject {
                         self.channels = parsedChannels
                         self.filteredChannels = self.channels
                         self.isLoading = false
-                        CacheManager.shared.saveChannels(parsedChannels, forKey: self.cacheKey)
+                        CacheManager.shared.saveChannels(self.channels, forKey: self.cacheKey)
                     }
                 }
             }
