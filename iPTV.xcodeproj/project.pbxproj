@@ -54,6 +54,8 @@
 		9E27180B2CD56CE500CB1FA2 /* CustomAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27180A2CD56CE500CB1FA2 /* CustomAppDelegate.swift */; };
 		9E27180D2CD56E6E00CB1FA2 /* CastButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E27180C2CD56E6E00CB1FA2 /* CastButton.swift */; };
 		9E2718112CD5735000CB1FA2 /* MPVolumeViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2718102CD5735000CB1FA2 /* MPVolumeViewWrapper.swift */; };
+		9E35F3612CE3C18F007A82F6 /* HistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35F3602CE3C18F007A82F6 /* HistoryManager.swift */; };
+		9E35F3632CE3C34E007A82F6 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35F3622CE3C34E007A82F6 /* HistoryView.swift */; };
 		9E716C5A2CDC0C9F003A25A8 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E716C592CDC0C9F003A25A8 /* NetworkMonitor.swift */; };
 		9E716C5C2CDC0CC2003A25A8 /* OfflineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E716C5B2CDC0CC2003A25A8 /* OfflineView.swift */; };
 		9E716C602CDD523F003A25A8 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E716C5F2CDD523F003A25A8 /* MailView.swift */; };
@@ -124,6 +126,8 @@
 		9E27180A2CD56CE500CB1FA2 /* CustomAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAppDelegate.swift; sourceTree = "<group>"; };
 		9E27180C2CD56E6E00CB1FA2 /* CastButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastButton.swift; sourceTree = "<group>"; };
 		9E2718102CD5735000CB1FA2 /* MPVolumeViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPVolumeViewWrapper.swift; sourceTree = "<group>"; };
+		9E35F3602CE3C18F007A82F6 /* HistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryManager.swift; sourceTree = "<group>"; };
+		9E35F3622CE3C34E007A82F6 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		9E716C592CDC0C9F003A25A8 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		9E716C5B2CDC0CC2003A25A8 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 		9E716C5F2CDD523F003A25A8 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 				9EABE45E2CDA53E10087D97B /* LanguageViewModel.swift */,
 				9EABE4602CDA53F50087D97B /* ChannelListViewModel.swift */,
 				9E716C592CDC0C9F003A25A8 /* NetworkMonitor.swift */,
+				9E35F3602CE3C18F007A82F6 /* HistoryManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				9E2717D42CD507A200CB1FA2 /* FavoritesView.swift */,
 				9E716C5F2CDD523F003A25A8 /* MailView.swift */,
 				9E716C612CDD5781003A25A8 /* InAppBrowserView.swift */,
+				9E35F3622CE3C34E007A82F6 /* HistoryView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -490,6 +496,7 @@
 				9E2718112CD5735000CB1FA2 /* MPVolumeViewWrapper.swift in Sources */,
 				9E2717E62CD507A200CB1FA2 /* APIError.swift in Sources */,
 				9E2717E72CD507A200CB1FA2 /* CSVLoader.swift in Sources */,
+				9E35F3612CE3C18F007A82F6 /* HistoryManager.swift in Sources */,
 				9E2717E82CD507A200CB1FA2 /* Environment.swift in Sources */,
 				9E716C622CDD5781003A25A8 /* InAppBrowserView.swift in Sources */,
 				9E2717E92CD507A200CB1FA2 /* NetworkManager.swift in Sources */,
@@ -519,6 +526,7 @@
 				9E2717F92CD507A200CB1FA2 /* CountryListView.swift in Sources */,
 				9E2717FA2CD507A200CB1FA2 /* DashboardView.swift in Sources */,
 				9E2717FB2CD507A200CB1FA2 /* FavoritesView.swift in Sources */,
+				9E35F3632CE3C34E007A82F6 /* HistoryView.swift in Sources */,
 				9E2717FC2CD507A200CB1FA2 /* LanguageListView.swift in Sources */,
 				9E2717FD2CD507A200CB1FA2 /* RegionListView.swift in Sources */,
 				9E27180B2CD56CE500CB1FA2 /* CustomAppDelegate.swift in Sources */,
@@ -657,7 +665,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iPTV/Preview Content\"";
 				DEVELOPMENT_TEAM = C6E94YDVFW;
 				ENABLE_PREVIEWS = YES;
@@ -676,7 +684,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.playingview.mobigaurav.iPTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -692,7 +700,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iPTV/Preview Content\"";
 				DEVELOPMENT_TEAM = C6E94YDVFW;
 				ENABLE_PREVIEWS = YES;
@@ -711,7 +719,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.playingview.mobigaurav.iPTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

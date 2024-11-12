@@ -11,22 +11,28 @@ struct AppView: View {
     @StateObject private var favoritesManager = FavoritesManager()
     @StateObject private var purchaseManager = PurchaseManager()
     @StateObject private var networkMonitor = NetworkMonitor()
+    @StateObject var historyManager = HistoryManager()
     @State private var showOfflineView = false
     
     var body: some View {
         ZStack{
             TabView {
-                DashboardView(purchaseManager:purchaseManager).tabItem{
-                    Label("Channels", systemImage: "list.dash")
+//                DashboardView(purchaseManager:purchaseManager).tabItem{
+//                    Label("Channels", systemImage: "list.dash")
+//                }
+                SearchIPTVLinkView(purchaseManager: purchaseManager).tabItem{
+                    Label("Stream", systemImage: "magnifyingglass.circle.fill")
+                }
+                
+                HistoryView().tabItem{
+                    Label("History", systemImage: "clock.fill")
                 }
                 
                 FavoritesView(purchaseManager: purchaseManager).tabItem{
                     Label("Favorites", systemImage: "star.fill")
                 }
                 
-                SearchIPTVLinkView(purchaseManager: purchaseManager).tabItem{
-                    Label("Stream", systemImage: "magnifyingglass.circle.fill")
-                }
+               
                 MoreView(purchaseManager: purchaseManager)
                                    .tabItem {
                                        Label("More", systemImage: "ellipsis")
@@ -35,6 +41,7 @@ struct AppView: View {
             
             .environmentObject(favoritesManager)
             .environmentObject(networkMonitor)
+            .environmentObject(historyManager)
             // Show the OfflineView overlay when offline and the view is visible
             if !networkMonitor.isConnected && showOfflineView {
                 Color.black.opacity(0.6)

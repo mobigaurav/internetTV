@@ -10,12 +10,12 @@ import SwiftUI
 struct AboutAppView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("IPTV App")
+            Text("iStreamX - IPTV App")
                 .font(.largeTitle)
                 .padding(.bottom, 5)
             
             Text("Version: 1.0")
-            Text("Developer: IPTV Media")
+            Text("Developer: iStreamX")
             Text("This app allows users to stream IPTV content, manage favorites, and access a wide range of channels.")
             
             Spacer()

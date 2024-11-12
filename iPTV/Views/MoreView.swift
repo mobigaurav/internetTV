@@ -21,6 +21,7 @@ struct MoreView: View {
                 
                 List {
                     Section(header: Text("Options").font(.headline).foregroundColor(.black)) {
+                        
                         if !purchaseManager.isPurchased {
                             Button(action: {
                                 showPurchaseView = true
@@ -61,6 +62,8 @@ struct MoreView: View {
                             ActivityView(activityItems: [URL(string: "https://apps.apple.com/us/app/istreamx/id6737782720")!])
                         }
                         
+                        
+                        
                         Button(action: {
                                 //showMailView = true
                             openGmail()
@@ -76,26 +79,7 @@ struct MoreView: View {
                             .background(Color.white)
                             .cornerRadius(10)
                         }
-//                        .actionSheet(isPresented: $showMailView) {
-////                            ActionSheet(
-////                                title: Text("Choose Email App"),
-////                                message: Text("Select an email app to contact us"),
-////                                buttons: [
-////                                    .default(Text("Apple Mail")) {
-////                                        if MFMailComposeViewController.canSendMail() {
-////                                            showMailView = true
-////                                        } else {
-////                                            showMailErrorAlert = true
-////                                        }
-////                                    },
-////                                    .default(Text("Gmail")) {
-////                                        openGmail()
-////                                    },
-////                                    .cancel()
-////                                ]
-////                            )
-//                           
-//                        }
+
                         
                         .alert(isPresented: $showMailErrorAlert) {
                             Alert(
@@ -104,6 +88,19 @@ struct MoreView: View {
                                 dismissButton: .default(Text("OK"))
                             )
                         }
+                        
+//                        NavigationLink(destination: HistoryView()) {
+//                            HStack {
+//                                Image(systemName: "clock.fill")
+//                                    .foregroundColor(.purple)
+//                                Text("History")
+//                                    .foregroundColor(.primary)
+//                                    .font(.body)
+//                            }
+//                            .padding(10)
+//                            .background(Color.white)
+//                            .cornerRadius(10)
+//                        }
                         
                         NavigationLink(destination: AboutAppView()) {
                             HStack {

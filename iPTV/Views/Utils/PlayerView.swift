@@ -27,6 +27,30 @@ struct PlayerView: View {
                     .onAppear {
                         setupPlayer()
                     }
+                    .onDisappear{
+                        player?.pause()
+                    }
+                
+    // Cast and AirPlay Buttons
+               HStack {
+                   // Cast Button
+                   Button(action: {
+                       // Implement Google Cast functionality here
+                       presentGoogleCast()
+                   }) {
+                       Image(systemName: "tv.fill")
+                           .resizable()
+                           .frame(width: 30, height: 30)
+                           .foregroundColor(.blue)
+                   }
+
+                   Spacer()
+
+                   // AirPlay Button
+                   AirPlayButton()
+                       .frame(width: 30, height: 30)
+               }
+               .padding()
             }
         }
         .sheet(isPresented: $showPurchaseView) {
@@ -35,7 +59,14 @@ struct PlayerView: View {
         .onAppear {
             startPlayback()
         }
+        
+        
     }
+    
+    private func presentGoogleCast() {
+            // Ensure Google Cast setup is initialized and the button is configured
+            GCKCastContext.sharedInstance().presentCastDialog()
+        }
     
     private func startPlayback() {
         
@@ -83,4 +114,15 @@ struct PlayerView: View {
         player = AVPlayer(url: streamURL)
         player?.play()
     }
+}
+
+struct AirPlayButton: UIViewRepresentable {
+    func makeUIView(context: Context) -> AVRoutePickerView {
+        let airPlayButton = AVRoutePickerView()
+        airPlayButton.activeTintColor = .blue
+        airPlayButton.tintColor = .gray
+        return airPlayButton
+    }
+
+    func updateUIView(_ uiView: AVRoutePickerView, context: Context) {}
 }

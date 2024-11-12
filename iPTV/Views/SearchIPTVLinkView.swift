@@ -17,7 +17,9 @@ struct SearchIPTVLinkView: View {
     @State private var selectedStreamUrl:IdentifiableURL?
     @EnvironmentObject var favoritesManager: FavoritesManager
     @ObservedObject var purchaseManager: PurchaseManager
+    @EnvironmentObject var historyManager:HistoryManager
     @State private var showBrowser = false
+    @State private var showPurchaseView = false
     
     func toggleFavorite(_ channel: ChannelInfo) {
         if favoritesManager.isFavorite(channel) {
@@ -32,7 +34,7 @@ struct SearchIPTVLinkView: View {
             VStack {
                 // Search bar for IPTV link
                 HStack {
-                    TextField("Enter IPTV link...", text: $iptvLink, onCommit: fetchChannels)
+                    TextField("Enter Any IPTV link...", text: $iptvLink, onCommit: fetchChannels)
                         .padding(10)
                         .background(Color(.systemGray5))
                         .cornerRadius(8)
@@ -54,6 +56,7 @@ struct SearchIPTVLinkView: View {
                     .sheet(isPresented: $showBrowser) {
                         InAppBrowserView(url: URL(string: "https://www.google.com")!)
                     }
+                    
                 }
         
                 
@@ -69,7 +72,13 @@ struct SearchIPTVLinkView: View {
                                 .foregroundColor(.primary)
                             Spacer()
                             Button(action: {
-                                toggleFavorite(channel)
+                                if purchaseManager.isPurchased {
+                                    showPurchaseView = false
+                                    toggleFavorite(channel)
+                                }else {
+                                    showPurchaseView = true
+                                }
+                                
                             }) {
                                 Image(systemName: favoritesManager.isFavorite(channel) ? "heart.fill" : "heart")
                                     .foregroundColor(.red)
@@ -87,6 +96,15 @@ struct SearchIPTVLinkView: View {
                 }
             }
             .navigationTitle("Stream")
+            .navigationBarItems(trailing: HStack(spacing:16) {
+                CastButton()
+                    .frame(width:35, height: 35)
+                MPVolumeViewWrapper()
+                    .frame(width:35, height: 35)
+            })
+            .sheet(isPresented: $showPurchaseView) {
+                           PurchaseView(purchaseManager: purchaseManager, isPresented: $showPurchaseView)
+                       }
             .sheet(item: $selectedStreamUrl) { channel in
                 PlayerView(streamURL: channel.url, purchaseManager: purchaseManager)
             }
@@ -94,6 +112,7 @@ struct SearchIPTVLinkView: View {
     }
     
     private func fetchChannels() {
+        
         guard let url = URL(string: iptvLink) else { return }
         isLoading = true
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -104,6 +123,7 @@ struct SearchIPTVLinkView: View {
                     let parsedChannels = M3UParser.parse(dataString)
                     DispatchQueue.main.async {
                         self.channels = parsedChannels
+                        historyManager.addLink(iptvLink)
                         self.iptvLink = ""
                     }
                 }
