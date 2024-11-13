@@ -11,7 +11,7 @@ struct SplashScreenView: View {
     @State private var isActive = false  // Controls navigation to the main view
     @State private var logoScale: CGFloat = 0.8  // Controls logo scaling for animation
     @ObservedObject var viewModel = DashboardViewModel()
-    
+
     var body: some View {
         ZStack {
             // Background gradient

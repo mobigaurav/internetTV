@@ -20,6 +20,8 @@ struct HistoryView: View {
     @State private var showShareSheet = false  // Controls share sheet presentation
     @State private var shareContent: [Any] = []  // Content to share
     @FocusState private var isEditing:Bool
+    @EnvironmentObject var streamManager: StreamManager
+    @Binding var selectedTab: AppTab
     
     var sortedLinks: [HistoryLink] {
             switch sortOption {
@@ -69,23 +71,13 @@ struct HistoryView: View {
                                             editingLinkID = link.id
                                         }
                                 }
-                                
-                                Spacer()
-                                
-                                // Share Button
-                                Button(action: {
-                                    showShareSheet = true      // Show the share sheet
-                                }) {
-                                    Image(systemName: "square.and.arrow.up")
-                                        .foregroundColor(.blue)
-                                }
-                                .sheet(isPresented: $showShareSheet) {
-                                    ActivityView(activityItems: [URL(string: link.url) ?? ""])
-                                }
-                               
-                
                             }
-                           
+              
+                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                deleteAction(for: link)
+                                shareAction(for: link)
+                            }
+                            
                             
                             Text(link.url)
                                 .font(.subheadline)
@@ -94,16 +86,45 @@ struct HistoryView: View {
                         .padding(.vertical, 5)
                         .onTapGesture {
                             historyManager.incrementUsageCount(for: link.id)
+                            navigateToStream(with: link)
                         }
                     }
-                    .onDelete(perform: deleteLink)
                     
                 }
                 
             }
             .navigationTitle("History")
+            .sheet(isPresented: $showShareSheet) {
+                       ActivityView(activityItems: shareContent)
+                   }
         }
       
+    }
+    
+    private func deleteAction(for link: HistoryLink) -> some View {
+            Button(role: .destructive) {
+                if let index = historyManager.recentLinks.firstIndex(of: link) {
+                    historyManager.recentLinks.remove(at: index)
+                }
+            } label: {
+                Label("Delete", systemImage: "trash")
+            }
+        }
+
+        private func shareAction(for link: HistoryLink) -> some View {
+            Button {
+                shareContent = [link.url]  // Set content to share
+                showShareSheet = true      // Trigger share sheet
+            } label: {
+                Label("Share", systemImage: "square.and.arrow.up")
+            }
+            .tint(.blue)  // Set a custom color for the share action
+        }
+    
+    private func navigateToStream(with link: HistoryLink) {
+        print("Navigating to Stream tab with link: \(link.url)")
+        streamManager.currentLink = link.url
+        selectedTab = .stream
     }
     
     private func deleteLink(at offsets:IndexSet) {

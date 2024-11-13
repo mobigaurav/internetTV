@@ -20,6 +20,7 @@ struct SearchIPTVLinkView: View {
     @EnvironmentObject var historyManager:HistoryManager
     @State private var showBrowser = false
     @State private var showPurchaseView = false
+    @EnvironmentObject var streamManager: StreamManager
     
     func toggleFavorite(_ channel: ChannelInfo) {
         if favoritesManager.isFavorite(channel) {
@@ -44,6 +45,13 @@ struct SearchIPTVLinkView: View {
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
                         .frame(maxWidth: .infinity)
+                        .onChange(of:streamManager.currentLink) {newLink in
+                            if let newLink = newLink {
+                                iptvLink = newLink
+                                fetchChannels()
+                            }
+                            
+                        }
                     
                     Button(action: {
                         showBrowser = true

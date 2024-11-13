@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct HistoryLink: Identifiable, Codable {
+struct HistoryLink: Identifiable, Codable, Equatable {
     let id = UUID()
     var url: String
     var label: String
