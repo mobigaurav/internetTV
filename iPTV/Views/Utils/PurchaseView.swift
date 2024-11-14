@@ -5,6 +5,7 @@
 //  Created by Gaurav Kumar on 11/4/24.
 //
 import SwiftUI
+import Combine
 
 struct PurchaseView: View {
     @ObservedObject var purchaseManager: PurchaseManager
@@ -12,7 +13,8 @@ struct PurchaseView: View {
     @State private var isLoaded = false
     @State private var iconScale: CGFloat = 0.8
     @State private var buttonTapped = false
-
+    @State private var cancellable:AnyCancellable?
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]),
@@ -105,11 +107,28 @@ struct PurchaseView: View {
                 
                 Spacer()
             }
+            .onAppear {
+                setupPurchaseObserver()
+            }
+            .onDisappear {
+                cancellable?.cancel()
+            }
+           
         }
         .onAppear {
             isLoaded = true
            // purchaseManager.trackTrialPeriod()
         }
+    }
+    
+    private func setupPurchaseObserver(){
+        cancellable = purchaseManager.$isPurchased
+            .sink {success in
+                if success {
+                    isPresented = false
+                }
+                
+            }
     }
 }
 

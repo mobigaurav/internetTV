@@ -97,6 +97,7 @@ class PurchaseManager: NSObject, ObservableObject, SKPaymentTransactionObserver,
 
     private func completePurchase(transaction: SKPaymentTransaction) {
         isPurchased = true
+        
         UserDefaults.standard.set(true, forKey: purchaseStatusKey)
         showPurchaseScreen = false
         purchaseInProgress = false
